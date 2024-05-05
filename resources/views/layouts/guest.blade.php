@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('meta_tags')
     
-    <title> وحدة المحفوظات</title>
+    <title>Pharma store</title>
 
     @vite('resources/js/app.js')
     @yield('styles')
