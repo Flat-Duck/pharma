@@ -52,12 +52,18 @@ class ProductController extends Controller
         $this->authorize('create', Product::class);
 
         $validated = $request->validated();
+        // if ($request->hasFile('image')) {
+        //     $validated['image'] = $request->file('image')->store('public');
+        // }
+
         if ($request->hasFile('image')) {
-            $validated['image'] = $request->file('image')->store('public');
+            $file = $request->file('image');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $destinationPath = public_path('/uploads');
+            $file->move($destinationPath, $filename);    
+            $validated['image'] = "'/uploads/" . $filename;
+            $product = Product::create($validated);
         }
-
-        $product = Product::create($validated);
-
         return redirect()
             ->route('products.edit', $product)
             ->withSuccess(__('crud.common.created'));
