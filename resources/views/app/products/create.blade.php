@@ -6,6 +6,7 @@
     action="{{ route('products.store') }}"
     has-files
     class="card"
+    enctype="multipart/form-data"
 >
     @csrf
     <div class="card-header">

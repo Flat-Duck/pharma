@@ -6,6 +6,7 @@
     action="{{ route('products.update', $product) }}"
     has-files
     class="card"
+    enctype="multipart/form-data"
 >
     @csrf @method('PUT')
     <div class="card-header">
