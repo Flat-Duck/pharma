@@ -1,101 +1,97 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm p-2">
-    <div class="container">
-        
-        <a class="navbar-brand text-primary font-weight-bold text-uppercase" href="{{ url('/') }}">
-            Pharma
-        </a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+<header class="navbar navbar-expand-md d-print-none" >
+    <div class="container-xl">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
-                @auth
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">Dashboard</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            Apps <span class="caret"></span>
-                        </a>
-                        
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            @can('view-any', App\Models\Brand::class)
-                            <a class="dropdown-item" href="{{ route('brands.index') }}">Brands</a>
-                            @endcan
-                            @can('view-any', App\Models\Cart::class)
-                            <a class="dropdown-item" href="{{ route('carts.index') }}">Carts</a>
-                            @endcan
-                            @can('view-any', App\Models\Category::class)
-                            <a class="dropdown-item" href="{{ route('categories.index') }}">Categories</a>
-                            @endcan
-                            @can('view-any', App\Models\Order::class)
-                            <a class="dropdown-item" href="{{ route('orders.index') }}">Orders</a>
-                            @endcan
-                            @can('view-any', App\Models\Product::class)
-                            <a class="dropdown-item" href="{{ route('products.index') }}">Products</a>
-                            @endcan
-                            @can('view-any', App\Models\User::class)
-                            <a class="dropdown-item" href="{{ route('users.index') }}">Users</a>
-                            @endcan
+        <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+            <a href="{{ url('/') }}">
+                <img src="./static/logo.svg" width="110" height="32" alt="Pharma" class="navbar-brand-image">
+            </a>
+        </h1>
+        <div class="navbar-nav flex-row order-md-last">
+            {{-- <div class="nav-item d-none d-md-flex me-3">
+                <div class="btn-list">
+                <a href="https://github.com/sponsors/codecalm" class="btn" target="_blank" rel="noreferrer">
+                    <i class="ti ti-heart text-pink"></i>
+                    Sponsor
+                </a>
+            </div>
+        </div> --}}
+        <div class="d-none d-md-flex">
+            <a href="?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode" data-bs-toggle="tooltip" data-bs-placement="bottom">
+                <i class="ti ti-moon"></i>
+            </a>
+            <a href="?theme=light" class="nav-link px-0 hide-theme-light" title="Enable light mode" data-bs-toggle="tooltip" data-bs-placement="bottom">
+                <i class="ti ti-sun"></i>
+            </a>
+            {{-- <div class="nav-item dropdown d-none d-md-flex me-3">
+                <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1" aria-label="Show notifications">
+                    <i class="ti ti-bell"></i>
+                    <span class="badge bg-red"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-end dropdown-menu-card">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Last updates</h3>
                         </div>
-
-                    </li>
-                    @if (Auth::user()->can('view-any', Spatie\Permission\Models\Role::class) || 
-                        Auth::user()->can('view-any', Spatie\Permission\Models\Permission::class))
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            Access Management <span class="caret"></span>
-                        </a>
-                        
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            @can('view-any', Spatie\Permission\Models\Role::class)
-                            <a class="dropdown-item" href="{{ route('roles.index') }}">Roles</a>
-                            @endcan
-                    
-                            @can('view-any', Spatie\Permission\Models\Permission::class)
-                            <a class="dropdown-item" href="{{ route('permissions.index') }}">Permissions</a>
-                            @endcan
+                        <div class="list-group list-group-flush list-group-hoverable">
+                            <div class="list-group-item">
+                                <div class="row align-items-center">
+                                    <div class="col-auto"><span class="status-dot status-dot-animated bg-red d-block"></span></div>
+                                        <div class="col text-truncate">
+                                            <a href="#" class="text-body d-block">Example 1</a>
+                                            <div class="d-block text-secondary text-truncate mt-n1">
+                                                Change deprecated html tags to text decoration classes (#29604)
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <a href="#" class="list-group-item-actions">
+                                                <i class="ti ti-star"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </li>
-                    @endif
-                @endauth
-            </ul>
-
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
-                <!-- Authentication Links -->
-                @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li>
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                    @endif
-                @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                    </div>
+                </div>
+            </div> --}}
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
+                    <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)"></span>
+                    <div class="d-none d-xl-block ps-2">
+                        <div>{{ auth()->user()->name ?? null }}</div>
+                        <div class="mt-1 small text-secondary">{{ auth()->user()->email ?? null }}</div>
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    @guest
+                        <a href="{{ route('login') }}" class="dropdown-item">تسجيل دخول</a>
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="dropdown-item">انشاء حساب جديد</a>
+                        @endif
+                    @endguest
+                    @auth
+                        <a class="dropdown-item" href="{{ route('profile.show') }}" rel="noopener">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                <i class="ti ti-user-circle"></i>
+                            </span>
+                            <span class="nav-link-title">
+                                {{ __('Profile') }}
+                            </span>
                         </a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
+                        <a class="dropdown-item" href="{{ route('logout') }}" rel="noopener" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                <i class="ti ti-logout-2"></i>
+                            </span>
+                            <span class="nav-link-title">
                                 {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </li>
-                @endguest
-            </ul>
+                            </span>
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>
+                    @endauth
+                </div>
+            </div>
         </div>
     </div>
-</nav>
+</header>

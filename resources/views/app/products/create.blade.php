@@ -1,40 +1,33 @@
-@extends('layouts.app')
+@extends('layouts.app', ['page' => 'products'])
 
 @section('content')
-<div class="container">
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">
-                <a href="{{ route('products.index') }}" class="mr-4"
-                    ><i class="icon ion-md-arrow-back"></i
-                ></a>
-                @lang('crud.products.create_title')
-            </h4>
-
-            <x-form
-                method="POST"
-                action="{{ route('products.store') }}"
-                has-files
-                class="mt-4"
+<form
+    method="POST"
+    action="{{ route('products.store') }}"
+    has-files
+    class="card"
+>
+    @csrf
+    <div class="card-header">
+        <a href="{{ route('products.index') }}" class="mr-4"
+            ><i class="ti ti-arrow-back"></i
+        ></a>
+        <h3 class="card-title">@lang('crud.products.create_title')</h3>
+    </div>
+    <div class="card-body">
+        <div class="col-6">@include('app.products.form-inputs')</div>
+    </div>
+    <div class="card-footer text-end">
+        <div class="d-flex">
+            <a
+                href="{{ route('products.index') }}"
+                class="btn btn-outline-secondary"
+                >@lang('crud.common.back')</a
             >
-                @include('app.products.form-inputs')
-
-                <div class="mt-4">
-                    <a
-                        href="{{ route('products.index') }}"
-                        class="btn btn-light"
-                    >
-                        <i class="icon ion-md-return-left text-primary"></i>
-                        @lang('crud.common.back')
-                    </a>
-
-                    <button type="submit" class="btn btn-primary float-right">
-                        <i class="icon ion-md-save"></i>
-                        @lang('crud.common.create')
-                    </button>
-                </div>
-            </x-form>
+            <button type="submit" class="btn btn-primary">
+                <i class="ti ti-device-floppy"></i> @lang('crud.common.create')
+            </button>
         </div>
     </div>
-</div>
+</form>
 @endsection

@@ -1,36 +1,49 @@
-@extends('layouts.app')
-
+@extends('layouts.app', ['page' => 'brands'])
 @section('content')
-<div class="container">
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">
-                <a href="{{ route('brands.index') }}" class="mr-4"
-                    ><i class="icon ion-md-arrow-back"></i
-                ></a>
-                @lang('crud.brands.show_title')
-            </h4>
+<div class="card">
+    <div class="card-header">
+        <a href="{{ route('brands.index') }}" class="mr-4"
+            ><i class="ti ti-arrow-back"></i
+        ></a>
+        <h3 class="card-title">@lang('crud.brands.show_title')</h3>
+    </div>
 
-            <div class="mt-4">
-                <div class="mb-4">
-                    <h5>@lang('crud.brands.inputs.name')</h5>
-                    <span>{{ $brand->name ?? '-' }}</span>
+    <div class="card-body">
+        <div class="row g-5">
+            <div class="col-xl-4">
+                <div class="row">
+                    <div class="col-md-6 col-xl-12">
+                        <div class="mb-3">
+                            <label class="form-label"
+                                >@lang('crud.brands.inputs.name')</label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                                value="{{ $brand->name ?? '-' }}"
+                                disabled=""
+                            />
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="mt-4">
-                <a href="{{ route('brands.index') }}" class="btn btn-light">
-                    <i class="icon ion-md-return-left"></i>
-                    @lang('crud.common.back')
-                </a>
-
-                @can('create', App\Models\Brand::class)
-                <a href="{{ route('brands.create') }}" class="btn btn-light">
-                    <i class="icon ion-md-add"></i> @lang('crud.common.create')
-                </a>
-                @endcan
             </div>
         </div>
     </div>
+    <div class="card-footer text-end">
+        <div class="d-flex">
+            <a
+                href="{{ route('brands.index') }}"
+                class="btn btn-outline-secondary"
+                >@lang('crud.common.back')</a
+            >
+
+            @can('create', App\Models\Brand::class)
+            <a href="{{ route('brands.create') }}" class="btn btn-primary">
+                @lang('crud.common.create')
+            </a>
+            @endcan
+        </div>
+    </div>
 </div>
+
 @endsection

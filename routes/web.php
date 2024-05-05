@@ -42,4 +42,12 @@ Route::prefix('/')
         Route::resource('orders', OrderController::class);
         Route::resource('products', ProductController::class);
         Route::resource('users', UserController::class);
+        Route::get('profile', [
+            \App\Http\Controllers\ProfileController::class,
+            'show',
+        ])->name('profile.show');
+        Route::put('profile', [
+            \App\Http\Controllers\ProfileController::class,
+            'update',
+        ])->name('profile.update');
     });

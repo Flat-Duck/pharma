@@ -2,39 +2,47 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1" viewport-fit=cover">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        @yield('meta_tags')
         
-        <title>Pharma</title>
+        <title>Pharma store</title>
         
-        <!-- Fonts -->
-        <link rel="dns-prefetch" href="//fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        @vite('resources/js/app.js')
         
-        <!-- Styles -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
-        
-        <!-- Icons -->
-        <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-        
-        <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-        
-        <!-- Scripts -->
-        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+        @yield('styles')
 
         
         @livewireStyles
     </head>
     
-    <body>
-        <div id="app">
-            @include('layouts.nav')
-        
-            <main class="py-4">
-                @yield('content')
-            </main>
+    <body dir="rtl">
+        <div id="app" class="page">
+            <div class="sticky-top">
+                @include('layouts.nav')
+                @include('layouts.sidebar')
+            </div>
+            <div class="page-wrapper">
+                <div class="page-header d-print-none">
+                    <div class="container-xl">
+                        <div class="row g-2 align-items-center">
+                            <div class="col">
+                                <h2 class="page-title">
+                                    @yield('page_title')
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-body">
+                    <div class="container-xl">
+                        @yield('content')
+                    </div>
+                </div>
+                {{-- @include('layouts.footer') --}}
+            </div>
         </div>
 
         @stack('modals')
@@ -51,7 +59,16 @@
             notyf.success('{{ session('success') }}')
         </script> 
         @endif
-        
+        <script>
+            function showPassword() {
+              var x = document.getElementById("password");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+            }          
+            </script> 
         <script>
             /* Simple Alpine Image Viewer */
             document.addEventListener('alpine:init', () => {
