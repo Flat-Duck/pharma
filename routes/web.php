@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Shop\HomeController as ShopHomeController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
@@ -35,7 +37,7 @@ Route::prefix('/')
     ->group(function () {
         Route::resource('roles', RoleController::class);
         Route::resource('permissions', PermissionController::class);
-
+        Route::resource('ads', AdController::class);
         Route::resource('brands', BrandController::class);
         Route::resource('carts', CartController::class);
         Route::resource('categories', CategoryController::class);
@@ -51,3 +53,14 @@ Route::prefix('/')
             'update',
         ])->name('profile.update');
     });
+
+
+// Route::namespace('Shop')->get('shop/', [ShopHomeController::class, 'index'])->name('home');
+
+// Route::prefix('/shop')
+//     ->middleware('auth')
+//     ->namespace('Shop')
+//     ->group(function () {
+//         Route::get('products', [ProductController::class, 'index']);
+        
+//     });

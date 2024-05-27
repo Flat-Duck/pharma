@@ -79,6 +79,19 @@
                                     </a>
                                 </li>
                             @endcan
+                            @can('view-any', App\Models\Ad::class)
+                            <li class="nav-item {{ $page == 'ads'? 'active':''  }}">
+                                <a class="nav-link" href="{{ route('ads.index') }}" >
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <!-- Download SVG icon from http://tabler-icons.io/i/Products -->
+                                        <!-- Products Icon -->
+                                    </span>
+                                    <span class="nav-link-title">
+                                        الإعلانات
+                                    </span>
+                                </a>
+                            </li>
+                        @endcan
                             @can('view-any', App\Models\User::class)
                                 <li class="nav-item {{ $page == 'users'? 'active':''  }}">
                                     <a class="nav-link" href="{{ route('users.index') }}" >

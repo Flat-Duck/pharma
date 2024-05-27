@@ -15,6 +15,12 @@ class PermissionsSeeder extends Seeder
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         // Create default permissions
+        Permission::create(['name' => 'list ads']);
+        Permission::create(['name' => 'view ads']);
+        Permission::create(['name' => 'create ads']);
+        Permission::create(['name' => 'update ads']);
+        Permission::create(['name' => 'delete ads']);
+
         Permission::create(['name' => 'list brands']);
         Permission::create(['name' => 'view brands']);
         Permission::create(['name' => 'create brands']);
