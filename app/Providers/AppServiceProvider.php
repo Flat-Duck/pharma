@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Ad;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
@@ -20,6 +21,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $ads = Ad::inRandomOrder()->take(3)->get();
+
+        while ($ads->count() < 3) {
+            $ads = $ads->concat($ads);
+        }
+        
+        $randomAds = $ads->take(3);
+        view()->share('randomAds', $randomAds);
     }
 }

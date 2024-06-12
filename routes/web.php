@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Shop\HomeController as ShopHomeController;
+use App\Http\Controllers\Shop\ProductController as ShopProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\Shop\CartController as ShopCartController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\BrandController;
@@ -55,12 +57,13 @@ Route::prefix('/')
     });
 
 
-// Route::namespace('Shop')->get('shop/', [ShopHomeController::class, 'index'])->name('home');
-
-// Route::prefix('/shop')
-//     ->middleware('auth')
-//     ->namespace('Shop')
-//     ->group(function () {
-//         Route::get('products', [ProductController::class, 'index']);
+Route::prefix('/shop')->name('shop.')
+    ->middleware('auth')
+    ->namespace('Shop')
+    ->group(function () {
+        Route::get('/', [ShopHomeController::class, 'index'])->name('home');
+        Route::get('products', [ShopProductController::class, 'index']);
+        Route::get('products/{product}', [ShopProductController::class, 'show'])->name('products.show');
+        Route::get('cart', [ShopCartController::class, 'index'])->name('cart.show');
         
-//     });
+    });
