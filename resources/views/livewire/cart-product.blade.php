@@ -2,7 +2,7 @@
     <td class="pd">
         <div class="product-detail-box">
             <div class="img-block">
-                <a href="{{route('shop.products.show', $product)}}"><img src="{{asset($product->image)}}" alt="{{$product->name}}"></a>
+                <a href="{{route('shop.products.show', $product)}}"><img src="{{asset($product->image)}}" alt="{{$product->name}}" style="max-height: 100px;"></a>
             </div>
             <div>
                 <h5 class="dark-gray">{{$product->name}}</h5>
