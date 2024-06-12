@@ -17,7 +17,7 @@
                     </thead>
                     <tbody>
                         @foreach ($products as $product)
-                        <livewire:cart-product product="{{$product}}" wire:key= " {{ $product->id }}"/>
+                        @livewire('cart-product', ['product'=>$product, 'key'=> $product->id ])
                         @endforeach
                     </tbody>
                 </table>
