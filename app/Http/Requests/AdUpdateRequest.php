@@ -23,7 +23,7 @@ class AdUpdateRequest extends FormRequest
             'title' => ['required', 'max:255', 'string'],
             'body' => ['required', 'max:255', 'string'],
             'offer' => ['required', 'max:255', 'string'],
-            'image' => ['nullable', 'image', 'max:1024'],
+            'image' => ['nullable', 'image'],
             'product_id' => ['required', 'exists:products,id'],
         ];
     }
