@@ -1,5 +1,7 @@
 @extends('layouts.shop.app', ['page' => 'cart'])
 @section('content')
-    <x-random-ad />
+    @if ($adsAva)
+        <x-random-ad />
+    @endif
     @livewire('cart-area')
 @endsection
