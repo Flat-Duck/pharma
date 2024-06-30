@@ -35,7 +35,7 @@ class Order extends Model
                 return "25%" ;
             case 'طلبك قيد الاعداد':
                 return "50%" ;
-            case 'طلبك قيد التوصيل ':
+            case 'طلبك قيد التوصيل':
                 return "75%" ;
             case 'تم توصيل طلبك اليك':
                 return "100%" ;
