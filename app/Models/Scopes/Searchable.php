@@ -36,6 +36,15 @@ trait Searchable
     }
 
     /**
+     * Adds a scope to search the table based on the
+     * $searchableFields array inside the model
+     */
+    public function scopeNotCompleted(Builder $query): Builder
+    {
+        return $query->where('is_delivered',false);
+    }
+
+    /**
      * Returns the searchable fields. If $searchableFields is undefined,
      * or is an empty array, or its first element is '*', it will search
      * in all table fields

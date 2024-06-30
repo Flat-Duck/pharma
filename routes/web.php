@@ -11,6 +11,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\Shop\OrderController as ShopOrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PermissionController;
@@ -44,6 +45,7 @@ Route::prefix('/')
         Route::resource('carts', CartController::class);
         Route::resource('categories', CategoryController::class);
         Route::resource('orders', OrderController::class);
+        Route::get('orders/folloup', [OrderController::class,'followup']);
         Route::resource('products', ProductController::class);
         Route::resource('users', UserController::class);
         Route::get('profile', [
@@ -64,6 +66,10 @@ Route::prefix('/shop')->name('shop.')
         Route::get('/', [ShopHomeController::class, 'index'])->name('home');
         Route::get('products', [ShopProductController::class, 'index']);
         Route::get('products/{product}', [ShopProductController::class, 'show'])->name('products.show');
+        
+        Route::get('orders', [ShopOrderController::class, 'index']);
+        Route::get('orders/{order}', [ShopOrderController::class, 'show'])->name('products.show');
+        
         Route::get('cart', [ShopCartController::class, 'index'])->name('cart.show');
         
     });

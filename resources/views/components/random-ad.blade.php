@@ -1,7 +1,7 @@
 <section class="weekly-deals p-40">
     <div class="container">
         <div class="heading mb-40">
-            <h3>Deal of This Week</h3>
+            <h3>!! إعلانات تجارية </h3>
         </div>
         <div class="row">
             @foreach ($randomAds as $ad)

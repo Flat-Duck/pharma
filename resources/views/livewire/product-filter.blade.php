@@ -18,31 +18,10 @@
                             <hr>
                             <div class="filter-block">
                                 <div class="title mb-32">
-                                    <h5>Price Range</h5>
-                                    <i class="far fa-horizontal-rule"></i>
-                                </div>
-                                <div class="slider-track">
-                                    <div class="d-flex justify-content-between mb-4p">
-                                        <h5>$10.00</h5>
-                                        <h5>$300</h5>
-                                    </div>
-                                    <input type="text" wire:change="alreto()" wire:model="price" class="js-slider form-control" value="0">
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="filter-block">
-                                <div class="title mb-32">
-                                    <h5>Books Categories</h5>
+                                    <h5>تصنيفات المنتجات</h5>
                                     <i class="far fa-horizontal-rule"></i>
                                 </div>
                                 <ul class="unstyled list">
-                                    <li class="mb-16">
-                                        <div class="filter-checkbox">
-                                            <input type="checkbox" id="Bio-graphy">
-                                            <label for="Bio-graphy">Biography</label>
-                                        </div>
-                                        <h6 class="dark-gray">(02)</h6>
-                                    </li>
                                     @foreach ($categories as $category)
                                         <li class="mb-16">
                                             <div class="filter-checkbox">
@@ -57,7 +36,7 @@
                             <hr>
                             <div class="filter-block">
                                 <div class="title mb-32">
-                                    <h5>Authors</h5>
+                                    <h5>العلامات التجارية</h5>
                                     <i class="far fa-horizontal-rule"></i>
                                 </div>
                                 <ul class="unstyled list">

@@ -32,29 +32,7 @@
                     </div>
                 </div>
             </form>
-            <div class="col-auto ms-auto d-print-none">
-                @can('create', App\Models\Order::class)
-                <a
-                    data-bs-original-title="إنشاء"
-                    data-bs-placement="top"
-                    data-bs-toggle="tooltip"
-                    class="pull-right btn btn-primary"
-                    href="{{ route('orders.create') }}"
-                >
-                    <i class="ti ti-plus"></i>
-                    @lang('crud.common.create')
-                </a>
-                @endcan
-                <a
-                    data-bs-original-title="متابعة الطلبيات"
-                    data-bs-placement="top"
-                    data-bs-toggle="tooltip"
-                    class="pull-right btn btn-info"
-                    href="{{ route('orders.followup') }}"
-                >
-                    <i class="ti ti-plus"></i>
-                    @lang('crud.common.create')
-                </a>
+            <div class="col-auto ms-auto d-print-none">               
             </div>
         </div>
     </div>

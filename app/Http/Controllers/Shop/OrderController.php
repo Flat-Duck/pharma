@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Shop;
 
 use App\Models\User;
 use App\Models\Order;
@@ -17,58 +17,11 @@ class OrderController extends Controller
      */
     public function index(Request $request): View
     {
-        $this->authorize('view-any', Order::class);
+        $orders = Order::latest()
+                ->paginate(5)
+                ->withQueryString();
 
-        $search = $request->get('search', '');
-
-        $orders = Order::search($search)
-            ->latest()
-            ->paginate(5)
-            ->withQueryString();
-
-        return view('app.orders.index', compact('orders', 'search'));
-    }
-    public function followup(Request $request): View
-    {
-        $this->authorize('view-any', Order::class);
-
-        $search = $request->get('search', '');
-
-        $orders = Order::search($search)
-            ->notCompleted()
-            ->latest()
-            ->paginate(5)
-            ->withQueryString();
-
-        return view('app.orders.followup', compact('orders', 'search'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create(Request $request): View
-    {
-        $this->authorize('create', Order::class);
-
-        $users = User::pluck('name', 'id');
-
-        return view('app.orders.create', compact('users'));
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(OrderStoreRequest $request): RedirectResponse
-    {
-        $this->authorize('create', Order::class);
-
-        $validated = $request->validated();
-
-        $order = Order::create($validated);
-
-        return redirect()
-            ->route('orders.edit', $order)
-            ->withSuccess(__('crud.common.created'));
+        return view('shop.orders.index', compact('orders', 'search'));
     }
 
     /**
@@ -78,7 +31,7 @@ class OrderController extends Controller
     {
         $this->authorize('view', $order);
 
-        return view('app.orders.show', compact('order'));
+        return view('shop.orders.show', compact('order'));
     }
 
     /**

@@ -26,6 +26,21 @@ class Order extends Model
 
     public function products()
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class)->withPivot(['quantity','price','total'])->as('orderd');
+    }
+    public function percent()
+    {
+        switch ($this->status) {
+            case 'تم إستلام طلبك':
+                return "25%" ;
+            case 'طلبك قيد الاعداد':
+                return "50%" ;
+            case 'طلبك قيد التوصيل ':
+                return "75%" ;
+            case 'تم توصيل طلبك اليك':
+                return "100%" ;
+            default:
+                return "0%" ;
+        }
     }
 }
