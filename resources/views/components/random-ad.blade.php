@@ -20,7 +20,7 @@
                                 {{ $ad->body }}
                             </p>
                         </div>
-                        <img src="{{ asset('assets/media/books/group-img.png') }}" alt="" class="main-img">
+                        <img src="{{ asset('storage'.$ad->image) }}" alt="" class="main-img">
                     </div>
                 </div>
             @endforeach
