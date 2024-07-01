@@ -21,7 +21,7 @@ class OrderController extends Controller
                 ->paginate(5)
                 ->withQueryString();
 
-        return view('shop.orders.index', compact('orders', 'search'));
+        return view('shop.orders.index', compact('orders'));
     }
 
     /**

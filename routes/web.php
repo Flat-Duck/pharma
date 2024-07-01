@@ -59,16 +59,17 @@ Route::prefix('/')
     });
 
 
+Route::get('/', [ShopHomeController::class, 'index'])->name('shop.home');
 Route::prefix('/shop')->name('shop.')
     ->middleware('auth')
     ->namespace('Shop')
     ->group(function () {
         Route::get('/', [ShopHomeController::class, 'index'])->name('home');
-        Route::get('products', [ShopProductController::class, 'index']);
+        Route::get('products', [ShopProductController::class, 'index'])->name('products');
         Route::get('products/{product}', [ShopProductController::class, 'show'])->name('products.show');
         
-        Route::get('orders', [ShopOrderController::class, 'index']);
-        Route::get('orders/{order}', [ShopOrderController::class, 'show'])->name('products.show');
+        Route::get('orders', [ShopOrderController::class, 'index'])->name('orders');
+        Route::get('orders/{order}', [ShopOrderController::class, 'show'])->name('orders.show');
         
         Route::get('cart', [ShopCartController::class, 'index'])->name('cart.show');
         

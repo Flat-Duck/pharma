@@ -56,9 +56,9 @@ class ProductController extends Controller
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $destinationPath = public_path('/uploads');
-            $file->move($destinationPath, $filename);    
-            $validated['image'] = 'uploads/' . $filename;
+            $destinationPath = public_path('/uploads/products');
+            $file->move($destinationPath, $filename);
+            $validated['image'] = 'uploads/products/' . $filename;
         }
         $product = Product::create($validated);
         return redirect()

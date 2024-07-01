@@ -55,9 +55,9 @@
       
       <div class="collapse navbar-collapse" id="mynavbar">
         <ul class="navbar-nav mainmenu m-0">
-            <h6 class="p-3"><a href="javascript:void(0);">الرئيسية</a></h6>
-            <h6 class="p-3"><a href="javascript:void(0);">المنتجات</a></h6>
-            <h6 class="p-3"><a href="javascript:void(0);">الطلبيات</a></h6>
+            <h6 class="p-3"><a href="{{route('shop.home')}}" >الرئيسية</a></h6>
+            <h6 class="p-3"><a href="{{route('shop.products')}}" >المنتجات</a></h6>
+            <h6 class="p-3"><a href="{{route('shop.orders')}}" >الطلبيات</a></h6>
             <h6 class="p-3"><a href="javascript:void(0);">تواصل </a></h6>
           
         </ul>

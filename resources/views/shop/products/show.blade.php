@@ -28,26 +28,25 @@
                             <div class="cart-button mb-32">
                                 <h6><a href="cart.html" class="cus-btn">
                                     <span class="icon"> <img src="{{ asset('assets/media/icons/orange-cart.png') }}" alt="">
-                                    </span>Buy Now</a></h6>
+                                    </span>إشتري الان</a></h6>
                                 <ul class="unstyled hover-buttons">
-                                    <li><a href="cart.html"><i class="fal fa-shopping-cart"></i></a></li>
-                                    <li><a href="#"><i class="fal fa-heart"></i></a></li>
+                                    <li><a href="{{route('shop.cart.show')}}"><i class="fal fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
                             <hr class="mb-32">
                             <div class="writer-area">
                                 <span>
-                                    <h5 class="dark-gray">Brand:</h5> &nbsp;<h5>{{$product->brand->name}}</h5>
+                                    <h5 class="dark-gray">العلامة التجارية:</h5> &nbsp;<h5>{{$product->brand->name}}</h5>
                                 </span>
                                 <span>
-                                    <h5 class="dark-gray">Categoty:</h5>&nbsp;<h5>{{$product->category->name}}</h5>
+                                    <h5 class="dark-gray">التصنيف:</h5>&nbsp;<h5>{{$product->category->name}}</h5>
                                 </span>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6">
                         <div class="product-image">
-                            <img src="{{ asset('assets/media/product-detail/product-1.png') }}" alt="">
+                            <img src="{{ asset($product->image) }}" alt="">
                         </div>
                     </div>
                 </div>

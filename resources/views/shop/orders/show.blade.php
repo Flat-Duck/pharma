@@ -28,7 +28,7 @@
                                         <div class="progress mb-40">
                                             <div class="progress-bar" role="progressbar" aria-valuenow="70"
                                                 aria-valuemin="0" aria-valuemax="100" style="width:{{$order->percent()}};">
-                                                <span class="sr-only">70% Complete</span>
+                                                <span class="sr-only">{{$order->percent()}} Complete</span>
                                             </div>
                                         </div>
                                     </div>
@@ -50,13 +50,13 @@
                                                 <div class="row">
                                                     <div class="col-lg-4">
                                                         <div class="image-block mb-32 mb-lg-0">
-                                                            <a href="product-detail.html"><img
+                                                            <a href="{{route('shop.products.show', $product)}}"><img
                                                                     src="{{ asset($product->image) }}" alt=""></a>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-8">
                                                         <div class="content-block">
-                                                            <h4><a href="product-detail.html">{{ $product->name }}</a></h4>
+                                                            <h4><a href="{{route('shop.products.show', $product)}}">{{ $product->name }}</a></h4>
                                                             <h5>{{ $product->price }}</h5>
                                                             <h6>By: {{ $product->brand->name }}</h6>
                                                             {{-- <span>{{$product->ordered->quantity}}</span> X <span>{{$product->ordered->price}}</span> --}}
