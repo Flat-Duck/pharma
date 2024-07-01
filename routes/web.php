@@ -45,7 +45,7 @@ Route::prefix('/')
         Route::resource('carts', CartController::class);
         Route::resource('categories', CategoryController::class);
         Route::resource('orders', OrderController::class);
-        Route::get('orders/folloup', [OrderController::class,'followup']);
+        Route::get('orders/followup', [OrderController::class,'followup']);
         Route::resource('products', ProductController::class);
         Route::resource('users', UserController::class);
         Route::get('profile', [

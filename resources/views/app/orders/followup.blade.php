@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </form>
-            <div class="col-auto ms-auto d-print-none">               
+            <div class="col-auto ms-auto d-print-none">
             </div>
         </div>
     </div>
