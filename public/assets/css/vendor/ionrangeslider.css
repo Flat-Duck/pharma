@@ -22,14 +22,14 @@
 .irs-bar {
     position: absolute;
     display: block;
-    left: 0;
+    right: 0;
     width: 0
 }
 
 .irs-shadow {
     position: absolute;
     display: none;
-    left: 0;
+    right: 0;
     width: 0
 }
 
@@ -53,11 +53,11 @@
 }
 
 .irs-min {
-    left: 0
+    right: 0
 }
 
 .irs-max {
-    right: 0
+    left: 0
 }
 
 .irs-from,
@@ -66,7 +66,7 @@
     position: absolute;
     display: block;
     top: 0;
-    left: 0;
+    right: 0;
     cursor: default;
     white-space: nowrap
 }
@@ -75,7 +75,7 @@
     position: absolute;
     display: none;
     bottom: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     height: 20px
 }
@@ -87,7 +87,7 @@
 .irs-grid-pol {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     width: 1px;
     height: 8px;
     background: #000
@@ -100,7 +100,7 @@
 .irs-grid-text {
     position: absolute;
     bottom: 0;
-    left: 0;
+    right: 0;
     white-space: nowrap;
     text-align: center;
     font-size: 9px;
@@ -113,7 +113,7 @@
     position: absolute;
     display: block;
     top: 0;
-    left: -1%;
+    right: -1%;
     width: 102%;
     height: 100%;
     cursor: default;
@@ -135,7 +135,7 @@
     position: absolute !important;
     display: block !important;
     top: 0 !important;
-    left: 0 !important;
+    right: 0 !important;
     width: 0 !important;
     height: 0 !important;
     font-size: 0 !important;
@@ -172,7 +172,7 @@
 }
 
 .irs--flat .irs-bar--single {
-    border-radius: 4px 0 0 4px
+    border-radius: 0 4px 4px 0
 }
 
 .irs--flat .irs-shadow {
@@ -192,10 +192,10 @@
     position: absolute;
     display: block;
     top: 0;
-    left: 50%;
+    right: 50%;
     width: 2px;
     height: 100%;
-    margin-left: -1px;
+    margin-right: -1px;
     background-color: #da4453
 }
 
@@ -235,10 +235,10 @@
     display: block;
     content: "";
     bottom: -6px;
-    left: 50%;
+    right: 50%;
     width: 0;
     height: 0;
-    margin-left: -3px;
+    margin-right: -3px;
     overflow: hidden;
     border: 3px solid transparent;
     border-top-color: #ed5565
@@ -279,7 +279,7 @@
 }
 
 .irs--big .irs-bar--single {
-    border-radius: 12px 0 0 12px
+    border-radius: 0 12px 12px 0
 }
 
 .irs--big .irs-shadow {
@@ -295,7 +295,7 @@
     border: 1px solid rgba(0, 0, 0, 0.3);
     background-color: #cbcfd5;
     background: linear-gradient(to bottom, white 0%, #B4B9BE 30%, white 100%);
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), inset 0 0 3px 1px white;
+    box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.2), inset 0 0 3px 1px white;
     border-radius: 30px
 }
 
@@ -361,7 +361,7 @@
 }
 
 .irs--modern .irs-bar--single {
-    border-radius: 5px 0 0 5px
+    border-radius: 0 5px 5px 0
 }
 
 .irs--modern .irs-shadow {
@@ -376,7 +376,7 @@
     height: 13px;
     border: 1px solid #a3adc1;
     border-top-width: 0;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 3px 3px
 }
 
@@ -384,12 +384,12 @@
     position: absolute;
     display: block;
     top: -4px;
-    left: 1px;
+    right: 1px;
     width: 6px;
     height: 6px;
     border: 1px solid #a3adc1;
     background: white;
-    transform: rotate(45deg)
+    transform: rotate(-45deg)
 }
 
 .irs--modern .irs-handle>i:nth-child(2) {
@@ -397,7 +397,7 @@
     display: block;
     box-sizing: border-box;
     top: 0;
-    left: 0;
+    right: 0;
     width: 10px;
     height: 12px;
     background: #e9e6e6;
@@ -410,11 +410,11 @@
     display: block;
     box-sizing: border-box;
     top: 3px;
-    left: 3px;
+    right: 3px;
     width: 4px;
     height: 5px;
-    border-left: 1px solid #a3adc1;
-    border-right: 1px solid #a3adc1
+    border-right: 1px solid #a3adc1;
+    border-left: 1px solid #a3adc1
 }
 
 .irs--modern .irs-handle.state_hover,
@@ -465,10 +465,10 @@
     display: block;
     content: "";
     bottom: -6px;
-    left: 50%;
+    right: 50%;
     width: 0;
     height: 0;
-    margin-left: -3px;
+    margin-right: -3px;
     overflow: hidden;
     border: 3px solid transparent;
     border-top-color: #20b426
@@ -511,7 +511,7 @@
 }
 
 .irs--sharp .irs-bar--single {
-    border-radius: 2px 0 0 2px
+    border-radius: 0 2px 2px 0
 }
 
 .irs--sharp .irs-shadow {
@@ -531,7 +531,7 @@
     position: absolute;
     display: block;
     top: 100%;
-    left: 0;
+    right: 0;
     width: 0;
     height: 0;
     border: 5px solid transparent;
@@ -579,10 +579,10 @@
     display: block;
     content: "";
     bottom: -6px;
-    left: 50%;
+    right: 50%;
     width: 0;
     height: 0;
-    margin-left: -3px;
+    margin-right: -3px;
     overflow: hidden;
     border: 3px solid transparent;
     border-top-color: #a804b2
@@ -623,7 +623,7 @@
 }
 
 .irs--round .irs-bar--single {
-    border-radius: 4px 0 0 4px
+    border-radius: 0 4px 4px 0
 }
 
 .irs--round .irs-shadow {
@@ -677,10 +677,10 @@
     display: block;
     content: "";
     bottom: -6px;
-    left: 50%;
+    right: 50%;
     width: 0;
     height: 0;
-    margin-left: -3px;
+    margin-right: -3px;
     overflow: hidden;
     border: 3px solid transparent;
     border-top-color: #006cfa
@@ -731,9 +731,9 @@
     height: 16px;
     border: 3px solid black;
     background-color: white;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg)
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg)
 }
 
 .irs--square .irs-handle.state_hover,

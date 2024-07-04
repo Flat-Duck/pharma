@@ -1,9 +1,5 @@
 @extends('layouts.shop.app', ['page' => 'home'])
 @section('content')
-    
-    @if ($adsAva)
-        <x-random-ad />
-    @endif
     <!-- Banner-3 End-->
     <!-- Main Content Start -->
     <div class="page-content">

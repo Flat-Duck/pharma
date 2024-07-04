@@ -1,26 +1,34 @@
-<section class="weekly-deals p-40">
+<section class="weekly-deals-2 pt-40">
     <div class="container">
-        <div class="heading mb-40">
+        <div class="heading">
             <h3>!! إعلانات تجارية </h3>
         </div>
-        <div class="row">
+        <div class="weekly-deals-slider mt-40">
             @foreach ($randomAds as $ad)
-                <div class="col-xl-4 offset-xl-0 col-lg-6 offset-lg-3">
-                    <div class="deal-right-area">
-                        <div class="text-block">
-                            <h3 class="mb-16 text-center color-white pt-40">{{ $ad->offer }}</h3>
-                            <h5 class="mb-16 text-center color-white">
+                <div class="week-deal-card">
+                    <div class="img-box">
+                        <img src="{{ asset($ad->image) }}" alt="">
+                    </div>
+                    <div class="content-box">
+                        <div class="price-row mb-16">
+                            <h5>{{ $ad->offer }}</h5>
+                        </div>
+                        <a href="{{ route('shop.products.show', $ad->product) }}">
+                            <h5 class="mb-16">
                                 {{ $ad->title }}
                             </h5>
-                            <a href="{{ route('shop.products.show', $ad->product) }}"
-                                class="cus-btn small invert align-items-center mb-16"><span class="icon"><img
-                                        src="{{ asset('assets/media/icons/btn-book.png') }}" alt=""></span><span
-                                    class="plain-text">تحصل على العرض</span></a>
-                            <p class="text-center color-white mb-24">
+                            <p>
                                 {{ $ad->body }}
                             </p>
-                        </div>
-                        <img src="{{ asset($ad->image) }}" alt="" class="main-img">
+
+                        </a>
+                        <h6>
+                            <a href="{{ route('shop.products.show', $ad->product) }}" class="cus-btn small m-auto">
+                                <span class="icon">
+                                    <img src="{{ asset("assets/media/icons/click-button.png") }}" alt="">
+                                </span>تحصل على العرض
+                            </a>
+                        </h6>
                     </div>
                 </div>
             @endforeach

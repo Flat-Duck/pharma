@@ -5,12 +5,12 @@
           <img alt="" src="{{asset("assets/media/brand-logo.png")}}" />
         </a>
         <div class="search-bar">
-          <form method="get" action="https://uiparadox.co.uk/templates/book_store/index.html">
+          {{-- <form method="get" action="https://uiparadox.co.uk/templates/book_store/index.html">
             <div class="form-group header-search">
               <button type="submit" class="fa fa-search form-control-search"></button>
               <input type="text" class="form-control" placeholder="Find the book you like..." />
             </div>
-          </form>
+          </form> --}}
         </div>
         <div class="right-content">
           @auth

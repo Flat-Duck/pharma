@@ -9,10 +9,10 @@
                 <table class="cart-table mb-24">
                     <thead>
                         <tr>
-                            <th>PRODUCT</th>
-                            <th>PRICE</th>
-                            <th>QUANTITY</th>
-                            <th>TOTAL</th>
+                            <th>المنتج</th>
+                            <th>السعر</th>
+                            <th>الكمية</th>
+                            <th>المجموع</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -27,7 +27,7 @@
                     <span class="icon">
                         <img src="assets/media/icons/orange-cart.png" alt="">
                     </span>
-                    Continue Shopping
+                    الاستمرار في التبضع
                 </a>
             </h6>
         </div>
@@ -45,20 +45,21 @@
                     <div class="col-xl-6">
                         <div class="amounts">
                             <div class="sub-total mb-24">
-                                <h6>SUBTOTAL</h6>
+                                <h6>المجموع</h6>
                                 <h6 wire:model="total">{{$total}}</h6>
                             </div>
                             <div class="shipping-charges mb-24">
-                                <h6>SHIPPING</h6>
-                                <h6>FREE</h6>
+                                <h6>التوصيل </h6>
+                                <h6>مجاني</h6>
                             </div>
                             <div class="grand-total mb-24">
-                                <h5>TOTAL</h5>
+                                <h5>المجموع</h5>
                                 <h5 wire:model="total">{{$total}}</h5>
                             </div>
                             <h6><a href="checkout.html" class="cus-btn"><span class="icon"><img
-                                            src="assets/media/icons/orange-cart.png" alt=""></span>Proceed to
-                                    Checkout</a></h6>
+                                            src="assets/media/icons/orange-cart.png" alt=""></span>
+                                            تأكيد الطلبية
+                                        </a></h6>
                         </div>
                     </div>
                     <div class="col-xl-3">

@@ -308,7 +308,11 @@
       }
     },
     wizardInit: function () {
-      $('#form-wizard').smartWizard();
+      let form_wiz = document.getElementById('form-wizard');
+      if (form_wiz != null)
+        {
+          form_wiz.smartWizard();
+        }
     },
     countdownInit: function (countdownSelector, countdownTime, countdown) {
       var eventCounter = $(countdownSelector);

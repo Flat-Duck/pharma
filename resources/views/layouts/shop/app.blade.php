@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content="BookStore HTML5 Template"/>
-    <title>BookStore - Find your favorite books</title>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" viewport-fit="cover">
+    <meta name="description" content="BookStore HTML5 Template" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Pharma store</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/media/favicon.png" />
+
+    @yield('meta_tags')
+
+    
+
+    @yield('styles')
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/media/favicon.png"/>
 
@@ -21,7 +29,7 @@
     @livewireStyles
     
 </head>
-<body>
+<body  dir="rtl">
     <!-- Preloader-->
     <div id="preloader">
         <div class="loader">
@@ -36,7 +44,9 @@
         @include('layouts.shop.nav')
         
         @yield('content')
-    
+        @if ($adsAva)
+        <x-random-ad />
+      @endif
     </div>
     @livewireScripts
 <!-- Jquery Js -->
