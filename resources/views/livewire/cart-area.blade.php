@@ -27,7 +27,7 @@
                     <span class="icon">
                         <img src="assets/media/icons/orange-cart.png" alt="">
                     </span>
-                    الاستمرار في التبضع
+                    تأكيد الطلبية
                 </a>
             </h6>
         </div>
@@ -56,10 +56,12 @@
                                 <h5>المجموع</h5>
                                 <h5 wire:model="total">{{$total}}</h5>
                             </div>
-                            <h6><a href="checkout.html" class="cus-btn"><span class="icon"><img
-                                            src="assets/media/icons/orange-cart.png" alt=""></span>
-                                            تأكيد الطلبية
-                                        </a></h6>
+                            <h6><a href="{{route('shop.cart.checkout')}}" class="cus-btn mt-24">
+                                <span class="icon">
+                                    <img src="assets/media/icons/orange-cart.png" alt="">
+                                </span>
+                                تأكيد الطلبية
+                            </a></h6>
                         </div>
                     </div>
                     <div class="col-xl-3">
