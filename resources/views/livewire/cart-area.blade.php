@@ -23,7 +23,7 @@
                 </table>
             </div>
             <h6>
-                <a href="checkout.html" class="cus-btn mt-24">
+                <a href="{{route('shop.cart.checkout')}}" class="cus-btn mt-24">
                     <span class="icon">
                         <img src="assets/media/icons/orange-cart.png" alt="">
                     </span>

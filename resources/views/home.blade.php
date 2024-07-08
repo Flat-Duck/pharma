@@ -1,10 +1,14 @@
 @extends('layouts.app', ['page' => 'dashboard'])
 @section('content')
-{{-- <div class="container">
+<div class="container">
     <div class="row justify-content-center d-print-none">
-        <x-state color="bg-yellow" title="عدد الطلبيات بحاجة الي صرف" subtitle="{{ \App\Models\Order::NotIssuedCount() }}" />
-        <x-state color="bg-green" title="عدد أذونات صرف" subtitle="{{ \App\Models\Issue::count() }}" />
-        <x-state color="bg-blue" title="عدد الاصناف الموجودة" subtitle="{{ \App\Models\Item::count() }}" />
+        {{-- <x-state color="bg-yellow" title="عدد الطلبيات بحاجة الي صرف" subtitle="{{ \App\Models\Order::NotIssuedCount() }}" /> --}}
+        <x-state color="bg-pink" title="عددالمنتجات الموجودة" subtitle="{{ \App\Models\Product::count() }}" />
+        <x-state color="bg-red" title="عددالطلبيات المستلمة" subtitle="{{ \App\Models\Order::where('status','تم إستلام طلبك')->count() }}" />
+        <x-state color="bg-orange" title="عددالطلبيات قيد التجهيز" subtitle="{{ \App\Models\Order::where('status','طلبك قيد الاعداد')->count() }}" />
+        <x-state color="bg-yellow" title="عددالطلبيات قيد التوصيل " subtitle="{{ \App\Models\Order::where('status','طلبك قيد التوصيل')->count() }}" />
+        <x-state color="bg-green" title="عددالطلبيات المكتملة" subtitle="{{ \App\Models\Order::where('status','تم توصيل طلبك اليك')->count() }}" />
+
     </div>
     <div class="row justify-content-center mt-4">
         <div class="col-md-6">
@@ -14,11 +18,11 @@
                     <div class="d-flex">
                         <div class="row g-2">
                             <div class="col">
-                                <h3 class="card-title">الاصناف ذات صلاحية شارفت على الانتهاء [{{ \App\Models\Item::expiring()->count()}}]</h3>
-                            </div>                            
+                                {{-- <h3 class="card-title">الاصناف ذات صلاحية شارفت على الانتهاء [{{ \App\Models\Product::expiring()->count()}}]</h3> --}}
+                            </div>
                         </div>
                         <div class="col-auto ms-auto d-print-none">
-                            <a class="btn btn-info col-auto" href="{{route('printer')}}">طباعة</a>
+                            {{-- <a class="btn btn-info col-auto" href="{{route('printer')}}">طباعة</a> --}}
                         </div>
                     </div>
                 
@@ -36,7 +40,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse (\App\Models\Item::expiring() as $k => $item )
+                                {{-- @forelse (\App\Models\Product::expiring() as $k => $item )
                                 <tr>
                                     <td>{{ $k+1 }}</td>
                                     <td>{{ $item->name ?? '-' }}</td>
@@ -46,9 +50,9 @@
                                         <div role="group" aria-label="Row Actions" class="d-flex" >
                                             @can('view', $item)
                                             <a href="{{ route('items.show', $item) }}" class=" btn btn-icon btn-outline-warning ms-1">
-                                                <i class="ti ti-eye"></i>                                                
+                                                <i class="ti ti-eye"></i>
                                             </a>
-                                            @endcan                   
+                                            @endcan
                                         </div>
                                     </td>
                                 </tr>
@@ -58,7 +62,7 @@
                                         @lang('crud.common.no_items_found')
                                     </td>
                                 </tr>
-                                @endforelse
+                                @endforelse --}}
                             </tbody>
                         </table>
                     </div>
@@ -74,11 +78,11 @@
                     <div class="d-flex">
                         <div class="row g-2">
                             <div class="col">
-                                <h3 class="card-title">الاصناف ذات كمية شارفت على الانتهاء [{{ \App\Models\Item::low_stock()->count()}}]</h3>
+                                {{-- <h3 class="card-title">الاصناف ذات كمية شارفت على الانتهاء [{{ \App\Models\Product::low_stock()->count()}}]</h3> --}}
                             </div>                            
                         </div>
                         <div class="col-auto ms-auto d-print-none">
-                            <a class="btn btn-info col-auto" href="{{route('printer')}}">طباعة</a>
+                            {{-- <a class="btn btn-info col-auto" href="{{route('printer')}}">طباعة</a> --}}
                         </div>
                     </div>
                 
@@ -96,7 +100,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse (\App\Models\Item::low_stock() as $k => $item )
+                                {{-- @forelse (\App\Models\Product::low_stock() as $k => $item )
                                 <tr>
                                     <td>{{ $k+1 }}</td>
                                     <td>{{ $item->name ?? '-' }}</td>
@@ -118,7 +122,7 @@
                                         @lang('crud.common.no_items_found')
                                     </td>
                                 </tr>
-                                @endforelse
+                                @endforelse --}}
                             </tbody>
                         </table>
                     </div>
@@ -128,5 +132,5 @@
             </div>
           </div>
     </div>
-</div> --}}
+</div>
 @endsection

@@ -44,9 +44,7 @@
         @include('layouts.shop.nav')
         
         @yield('content')
-        @if ($adsAva)
-        <x-random-ad />
-      @endif
+
     </div>
     @livewireScripts
 <!-- Jquery Js -->

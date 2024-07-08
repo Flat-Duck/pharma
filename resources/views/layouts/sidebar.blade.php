@@ -4,7 +4,7 @@
             <div class="container-xl">
                 <ul class="navbar-nav">
                     @auth
-                        <li class="nav-item">
+                    <li class="nav-item  {{ $page == 'dashboard'? 'active':''  }}">
                             <a class="nav-link" href="{{ route('home') }}" >
                                 <span class="nav-link-icon d-md-none d-lg-inline-block">
                                     <i class="ti ti-home"></i>
@@ -19,6 +19,7 @@
                                     <a class="nav-link" href="{{ route('brands.index') }}" >
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                                             <!-- Download SVG icon from http://tabler-icons.io/i/Brands -->
+                                            <i class="ti ti-badge-tm"></i>
                                             <!-- Brands Icon -->
                                         </span>
                                         <span class="nav-link-title">
@@ -45,6 +46,7 @@
                                     <a class="nav-link" href="{{ route('categories.index') }}" >
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                                             <!-- Download SVG icon from http://tabler-icons.io/i/Categories -->
+                                            <i class="ti ti-category"></i>
                                             <!-- Categories Icon -->
                                         </span>
                                         <span class="nav-link-title">
@@ -58,6 +60,7 @@
                                     <a class="nav-link" href="{{ route('orders.index') }}" >
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                                             <!-- Download SVG icon from http://tabler-icons.io/i/Orders -->
+                                            <i class="ti ti-truck-delivery"></i>
                                             <!-- Orders Icon -->
                                         </span>
                                         <span class="nav-link-title">
@@ -66,11 +69,26 @@
                                     </a>
                                 </li>
                             @endcan
+                            
+                                <li class="nav-item {{ $page == 'chat'? 'active':''  }}">
+                                    <a class="nav-link" href="{{ route('chats') }}" >
+                                        <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                            <!-- Download SVG icon from http://tabler-icons.io/i/Orders -->
+                                            <i class="ti ti-brand-hipchat"></i>
+                                            <!-- Orders Icon -->
+                                        </span>
+                                        <span class="nav-link-title">
+                                            المحادثات
+                                        </span>
+                                    </a>
+                                </li>
+                            
                             @can('view-any', App\Models\Product::class)
                                 <li class="nav-item {{ $page == 'products'? 'active':''  }}">
                                     <a class="nav-link" href="{{ route('products.index') }}" >
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                                             <!-- Download SVG icon from http://tabler-icons.io/i/Products -->
+                                            <i class="ti ti-brand-tidal"></i>
                                             <!-- Products Icon -->
                                         </span>
                                         <span class="nav-link-title">
@@ -84,6 +102,7 @@
                                     <a class="nav-link" href="{{ route('suppliers.index') }}" >
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                                             <!-- Download SVG icon from http://tabler-icons.io/i/Suppliers -->
+                                            <i class="ti ti-irregular-polyhedron-plus"></i>
                                             <!-- Suppliers Icon -->
                                         </span>
                                         <span class="nav-link-title">
@@ -97,6 +116,7 @@
                                 <a class="nav-link" href="{{ route('ads.index') }}" >
                                     <span class="nav-link-icon d-md-none d-lg-inline-block">
                                         <!-- Download SVG icon from http://tabler-icons.io/i/Products -->
+                                        <i class="ti ti-badge-ad"></i>
                                         <!-- Products Icon -->
                                     </span>
                                     <span class="nav-link-title">
@@ -110,6 +130,7 @@
                                     <a class="nav-link" href="{{ route('users.index') }}" >
                                         <span class="nav-link-icon d-md-none d-lg-inline-block">
                                             <!-- Download SVG icon from http://tabler-icons.io/i/Users -->
+                                            <i class="ti ti-users"></i>
                                             <!-- Users Icon -->
                                         </span>
                                         <span class="nav-link-title">

@@ -1,37 +1,29 @@
-<section class="weekly-deals-2 pt-40">
+<div class="hero-banner-3 bg-lightest-gray">
     <div class="container">
-        <div class="heading">
-            <h3>!! إعلانات تجارية </h3>
-        </div>
-        <div class="weekly-deals-slider mt-40">
-            @foreach ($randomAds as $ad)
-                <div class="week-deal-card">
-                    <div class="img-box">
-                        <img src="{{ asset($ad->image) }}" alt="">
-                    </div>
-                    <div class="content-box">
-                        <div class="price-row mb-16">
-                            <h5>{{ $ad->offer }}</h5>
-                        </div>
-                        <a href="{{ route('shop.products.show', $ad->product) }}">
-                            <h5 class="mb-16">
-                                {{ $ad->title }}
-                            </h5>
-                            <p>
-                                {{ $ad->body }}
-                            </p>
-
+        <div class="row">
+            <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12">
+              <div class="text-block">
+                <h1 class="mb-12">{{ $randomAd->offer }}</h1>
+                <h5>{{ $randomAd->title }}</h5>
+                <p class="dark-gray">
+                    {{ $randomAd->body }}
+                </p>
+                <h6>
+                    @if (!is_null($randomAd->product))
+                        <a href="{{ route('shop.products.show', ['product'=>$randomAd->product]) }}" class="cus-btn small m-auto">
+                            <span class="icon">
+                                <img src="{{ asset("assets/media/icons/click-button.png") }}" alt="">
+                            </span>تحصل على العرض
                         </a>
-                        <h6>
-                            <a href="{{ route('shop.products.show', $ad->product) }}" class="cus-btn small m-auto">
-                                <span class="icon">
-                                    <img src="{{ asset("assets/media/icons/click-button.png") }}" alt="">
-                                </span>تحصل على العرض
-                            </a>
-                        </h6>
-                    </div>
-                </div>
-            @endforeach
+                    @endif
+                </h6>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+              <div class="images-row">
+                <img src="{{ asset($randomAd->image) }}" class="blog-img big" alt="">
+              </div>
+            </div>
         </div>
     </div>
-</section>
+</div>

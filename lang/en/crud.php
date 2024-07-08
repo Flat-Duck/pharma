@@ -21,6 +21,19 @@ return [
         'saved' => 'تم الحفظ بنجاح',
         'removed' => 'تم الحذف بنجاح',
     ],
+    'suppliers' => [
+        'name' => 'الموردين',
+        'index_title' => ' قائمة الموردين',
+        'new_title' => 'مورد جديد ',
+        'create_title' => 'إنشاء مورد  ',
+        'edit_title' => 'تعديل',
+        'show_title' => 'عرض مورد',
+        'inputs' => [
+            'name' => 'الاسم',
+            'phone' => 'رقم الهاتف',
+            'address' => 'العنوان',
+        ],
+    ],
 
     'brands' => [
         'name' => 'العلامات التجارية',
@@ -84,6 +97,7 @@ return [
         'inputs' => [
             'number' => 'رقم الطلبية',
             'total' => 'المجموع',
+            'status' => 'حالة الطلبية',
             'is_delivered' => 'تم التوصيل',
             'user_id' => 'الزبون',
         ],

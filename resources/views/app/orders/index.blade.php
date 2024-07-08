@@ -52,8 +52,8 @@
                     class="pull-right btn btn-info"
                     href="{{ route('orders.followup') }}"
                 >
-                    <i class="ti ti-plus"></i>
-                    @lang('crud.common.create')
+                <i class="ti ti-package-export"></i>
+                متابعة الطلبيات
                 </a>
             </div>
         </div>

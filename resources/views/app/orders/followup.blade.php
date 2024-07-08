@@ -32,8 +32,21 @@
                     </div>
                 </div>
             </form>
-            <div class="col-auto ms-auto d-print-none">
-            </div>
+            {{-- <div class="col-auto ms-auto d-print-none">
+                @can('create', App\Models\Order::class)
+                <a
+                    data-bs-original-title="إنشاء"
+                    data-bs-placement="top"
+                    data-bs-toggle="tooltip"
+                    class="pull-right btn btn-primary"
+                    href="{{ route('orders.create') }}"
+                >
+                    <i class="ti ti-plus"></i>
+                    @lang('crud.common.create')
+                </a>
+                @endcan
+
+            </div> --}}
         </div>
     </div>
 
@@ -53,6 +66,8 @@
                     <th class="text-left">
                         @lang('crud.orders.inputs.user_id')
                     </th>
+                    <th class="text-center">@lang('crud.orders.inputs.status')</th>
+                    <th class="text-center">@lang('crud.orders.inputs.status')</th>
                     <th class="text-center">@lang('crud.common.actions')</th>
                 </tr>
             </thead>
@@ -63,6 +78,21 @@
                     <td>{{ $order->total ?? '-' }}</td>
                     <td>{{ $order->is_delivered ?? '-' }}</td>
                     <td>{{ optional($order->user)->name ?? '-' }}</td>
+                    <td>
+                        <span class="dropdown">
+                            <button class="btn dropdown-toggle align-text-top" data-bs-boundary="viewport" data-bs-toggle="dropdown" aria-expanded="false">تغيير حالة الطلبية</button>
+                            <div class="dropdown-menu" style="">
+                                <a href="{{route('update_order_status_one',$order)}}" type="submit" class="dropdown-item" >طلبك قيد الاعداد</a>
+                                <a href="{{route('update_order_status_two',$order)}}" type="submit" class="dropdown-item" >طلبك قيد التوصيل</a>
+                                <a href="{{route('update_order_status_three',$order)}}" type="submit" class="dropdown-item" >تم توصيل طلبك اليك</a>
+                                    
+                                
+                            </div>
+                        </span>
+                    </td>
+                    <td>
+                        <span> {{ $order->status ?? '-' }} </span>
+                    </td>
                     <td class="text-center" style="width: 134px;">
                         <div
                             role="group"

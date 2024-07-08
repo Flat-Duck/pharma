@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Shop;
 
 use App\Models\Cart;
+use App\Models\Order;
 use App\Models\User;
+use Auth;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
@@ -92,14 +94,35 @@ class CartController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request, Cart $cart): RedirectResponse
+    public function checkout(Request $request): RedirectResponse
     {
-        $this->authorize('delete', $cart);
+        $cart = auth()->user()->cart;
+        $products = $cart->products;
 
-        $cart->delete();
+        if($products->count() <= 0){
+            return redirect()->back();
+        }
+        $order = new Order();
+        $order->number = mt_rand(10000,99999);
+        $order->total = 0.0;
+        $order->is_delivered = false;
+        $order->user_id = auth()->id() ;
+        $order->status = 'تم إستلام طلبك' ;
+        $order->save();
 
-        return redirect()
-            ->route('carts.index')
-            ->withSuccess(__('crud.common.removed'));
+        foreach ($products as $product)
+        {
+            $order->products()->attach([$product->id =>
+            [
+                'quantity' =>$product->carted->quantity,
+                'price' => $product->price,
+                'total' => ($product->carted->quantity*$product->price)],
+            ]);
+        }
+        
+        $order->calculateTotal();
+        $cart->products()->delete();
+
+        return redirect()->route('shop.orders.show', $order);
     }
 }

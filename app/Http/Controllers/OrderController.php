@@ -82,6 +82,16 @@ class OrderController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     */
+    public function print(Request $request, Order $order): View
+    {
+        
+
+        return view('app.orders.print', compact('order'));
+    }
+
+    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Request $request, Order $order): View
@@ -91,6 +101,27 @@ class OrderController extends Controller
         $users = User::pluck('name', 'id');
 
         return view('app.orders.edit', compact('order', 'users'));
+    }
+    public function update_order_status_one(Request $request, Order $order)
+    {
+       $order->status = 'طلبك قيد الاعداد';
+       $order->save();
+
+        return redirect()->route('orders.print',$order);
+    }
+    public function update_order_status_two(Request $request, Order $order)
+    {
+       $order->status = 'طلبك قيد التوصيل';
+       $order->save();
+
+        return redirect()->back();
+    }
+    public function update_order_status_three(Request $request, Order $order)
+    {
+       $order->status = 'تم توصيل طلبك اليك';
+       $order->save();
+
+        return redirect()->back();
     }
 
     /**

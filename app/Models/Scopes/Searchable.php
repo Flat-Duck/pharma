@@ -41,7 +41,7 @@ trait Searchable
      */
     public function scopeNotCompleted(Builder $query): Builder
     {
-        return $query->where('is_delivered',false);
+        return $query->where('is_delivered',false) ->where('status','<>','تم توصيل طلبك اليك');
     }
 
     /**

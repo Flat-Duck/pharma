@@ -26,7 +26,15 @@ class Order extends Model
 
     public function products()
     {
-        return $this->belongsToMany(Product::class)->withPivot(['quantity','price','total'])->as('orderd');
+        return $this->belongsToMany(Product::class)->withPivot(['quantity','price','total'])->as('ordered');
+    }
+
+    public function calculateTotal()
+    {
+         $this->total = $this->products->sum('ordered.total');
+         $this->save();
+         return;
+
     }
     public function percent()
     {

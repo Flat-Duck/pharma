@@ -21,15 +21,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $ads = Ad::inRandomOrder()->take(3)->get();
+        $randomAd = Ad::inRandomOrder()->first();
 
-        if($ads->count() > 0){
-            while ($ads->count() < 3) {
-                $ads = $ads->concat($ads);
-            }
-        
-            $randomAds = $ads->take(3);
-            view()->share(['randomAds'=> $randomAds,'adsAva'=> true]);
+        if($randomAd)
+        {
+            view()->share(['randomAd'=> $randomAd,'adsAva'=> true]);
             return;
         }
 

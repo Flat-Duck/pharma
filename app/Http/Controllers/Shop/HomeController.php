@@ -27,4 +27,14 @@ class HomeController extends Controller
         //$products = Product::all();
         return view('shop.index');//,compact('products'));
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function chat()
+    {
+        return view('shop.chat');
+    }
 }
