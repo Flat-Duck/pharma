@@ -1,13 +1,14 @@
 @extends('layouts.shop.app', ['page' => 'home'])
 
 @section('content')
-@if ($adsAva)
-<x-random-ad />
-@endif
+
   
   
 <!-- Main Content Start -->
 <div class="page-content">
+  @if ($adsAva)
+<x-random-ad />
+@endif
   <section>
     <div class="container">
       @livewire('product-filter')

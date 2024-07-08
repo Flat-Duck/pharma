@@ -114,15 +114,15 @@ class CartController extends Controller
         {
             $order->products()->attach([$product->id =>
             [
-                'quantity' =>$product->carted->quantity,
+                'quantity' => $product->carted->quantity,
                 'price' => $product->price,
-                'total' => ($product->carted->quantity*$product->price)],
+                'total' => ($product->carted->quantity * $product->price)],
             ]);
         }
         
         $order->calculateTotal();
-        $cart->products()->delete();
+        $cart->products()->detach();
 
-        return redirect()->route('shop.orders.show', $order);
+        // return redirect()->route('shop.orders.show', $order);
     }
 }
