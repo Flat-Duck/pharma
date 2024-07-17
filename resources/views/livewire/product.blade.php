@@ -1,6 +1,6 @@
 <div class="col-lg-4 col-md-6 col-sm-6">
-    <div class="book-card mb-24">
-        <a href="{{route('shop.products.show',$product)}}"><img src="{{asset($product->image)}}" alt="{{$product->name}}"></a>
+    <div class="book-card mb-24" style="object-fit: cover;">
+        <a href="{{route('shop.products.show',$product)}}" style="width:100%;"><img  src="{{asset($product->image)}}" alt="{{$product->name}}" style="max-height: 320px; object-fit: cover;"></a>
         <div class="">
             <ul class="unstyled hover-buttons">
                 <li><a href="{{route('shop.products.show', $product)}}"><i class="fal fa-eye"></i></a></li>

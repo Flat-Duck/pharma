@@ -38,6 +38,7 @@ Auth::routes();
 
 Route::get('/admin', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/stats', [HomeController::class, 'stats'])->name('stats');
 
 Route::prefix('/admin')
 ->middleware('auth')

@@ -1,12 +1,7 @@
 @extends('layouts.app', ['page' => 'ads'])
 
 @section('content')
-<form
-    method="POST"
-    action="{{ route('ads.update', $ad) }}"
-    has-files
-    class="card"
->
+<form method="POST" action="{{ route('ads.update', $ad) }}" enctype="multipart/form-data" class="card" >
     @csrf @method('PUT')
     <div class="card-header">
         <a href="{{ route('ads.index') }}" class="mr-4"

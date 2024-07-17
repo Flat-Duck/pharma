@@ -119,9 +119,19 @@ class OrderController extends Controller
     public function update_order_status_three(Request $request, Order $order)
     {
        $order->status = 'تم توصيل طلبك اليك';
+       $order->is_delivered = true;
        $order->save();
+       $this->finalizeOrder($order);
 
         return redirect()->back();
+    }
+    private function finalizeOrder($order)
+    {
+        foreach ($order->products as  $product) {
+            $product->quantity -=$product->carted->quantity;
+            $product->save();
+        }
+        
     }
 
     /**

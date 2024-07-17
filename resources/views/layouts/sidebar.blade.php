@@ -14,6 +14,16 @@
                                 </span>
                             </a>
                         </li>
+                    <li class="nav-item  {{ $page == 'stats'? 'active':''  }}">
+                            <a class="nav-link" href="{{ route('stats') }}" >
+                                <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                    <i class="ti ti-chart"></i>
+                                </span>
+                                <span class="nav-link-title">
+                                    الاحصائيات
+                                </span>
+                            </a>
+                        </li>
                             @can('view-any', App\Models\Brand::class)
                                 <li class="nav-item {{ $page == 'brands'? 'active':''  }}">
                                     <a class="nav-link" href="{{ route('brands.index') }}" >
@@ -97,20 +107,7 @@
                                     </a>
                                 </li>
                             @endcan
-                            @can('view-any', App\Models\Supplier::class)
-                                <li class="nav-item {{ $page == 'suppliers'? 'active':''  }}">
-                                    <a class="nav-link" href="{{ route('suppliers.index') }}" >
-                                        <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                            <!-- Download SVG icon from http://tabler-icons.io/i/Suppliers -->
-                                            <i class="ti ti-irregular-polyhedron-plus"></i>
-                                            <!-- Suppliers Icon -->
-                                        </span>
-                                        <span class="nav-link-title">
-                                            الموردين
-                                        </span>
-                                    </a>
-                                </li>
-                            @endcan
+
                             @can('view-any', App\Models\Ad::class)
                             <li class="nav-item {{ $page == 'ads'? 'active':''  }}">
                                 <a class="nav-link" href="{{ route('ads.index') }}" >

@@ -5,9 +5,14 @@
         <div class="col-md-12">
             <div class="card card-sm">
                 <div class="card-body">
+                    <div class="row">
+                        <h1 class="d-flex justify-content-center">صيدلية طوبى</h1>
+                        <h4 class="d-flex justify-content-center">فاتورة مبدئية</h4>
+                    </div>
                     <div class="d-flex">
                         <div class="row g-2">
                             <div class="col">
+                                {{now()->format('Y/d/m')}}
                             </div>
                         </div>
                     </div>
@@ -35,7 +40,7 @@
                                     </tr>
                                     @empty
                                     <tr>
-                                        <td colspan="4">
+                                        <td colspan="5">
                                             @lang('crud.common.no_items_found')
                                         </td>
                                     </tr>
@@ -43,6 +48,28 @@
                                 </tbody>
                             </table>
                         </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <div class="table-responsive">
+                            <table class="table" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>عدد المنتجات</th>
+                                        <th>المجموع الكلي</th>
+                                        <th>توقيع الزبون</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{ $order->products->sum('ordered.quantity')}}</td>
+                                        <td>{{ $order->products->sum('ordered.total')}} د.ل</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
                 </div>
             </div>

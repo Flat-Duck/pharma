@@ -123,6 +123,6 @@ class CartController extends Controller
         $order->calculateTotal();
         $cart->products()->detach();
 
-        // return redirect()->route('shop.orders.show', $order);
+        return redirect()->route('shop.orders.show', $order);
     }
 }

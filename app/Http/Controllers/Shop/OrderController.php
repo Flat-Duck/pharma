@@ -17,11 +17,13 @@ class OrderController extends Controller
      */
     public function index(Request $request): View
     {
+        $order = Order::latest()->where('is_delivered',false)->first();
         $orders = Order::latest()
-                ->paginate(5)
+                ->where('is_delivered', true)
+                ->paginate(10)
                 ->withQueryString();
 
-        return view('shop.orders.index', compact('orders'));
+        return view('shop.orders.index', compact('orders', 'order'));
     }
 
     /**
