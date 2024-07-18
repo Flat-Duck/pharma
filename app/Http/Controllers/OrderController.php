@@ -128,7 +128,7 @@ class OrderController extends Controller
     private function finalizeOrder($order)
     {
         foreach ($order->products as  $product) {
-            $product->quantity -=$product->carted->quantity;
+            $product->quantity -=$product->ordered->quantity;
             $product->save();
         }
         
