@@ -51,4 +51,23 @@ class Order extends Model
                 return "0%" ;
         }
     }
+
+           /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function boot()
+    {
+        parent::boot();
+        static::created(function ($model) {
+            $model->number =$model->id;
+            $model->save();
+        });
+        
+   
+    }
+
+
 }
+
