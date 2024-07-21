@@ -41,7 +41,7 @@
             </div>
             <div class="col-xl-6 col-lg-6">
                 <div class="sign-up-image bg-lightest-gray br-30 box-shadow">
-                    <img src="{{ asset("assets/media/images/sign-up.png")}}" alt="">
+                    <img src="/pharma.jpg" alt="">
                 </div>
             </div>
         </div>

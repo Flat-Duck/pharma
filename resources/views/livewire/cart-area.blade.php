@@ -45,7 +45,7 @@
                     <div class="col-xl-6">
                         <div class="amounts">
                             <div class="sub-total mb-24">
-                                <h6>المجموع</h6>
+                                <h6>قيمة الطلبية</h6>
                                 <h6 wire:model="total">{{$total}}</h6>
                             </div>
                             <div class="shipping-charges mb-24">
@@ -53,7 +53,7 @@
                                 <h6>مجاني</h6>
                             </div>
                             <div class="grand-total mb-24">
-                                <h5>المجموع</h5>
+                                <h5>قيمة الطلبية</h5>
                                 <h5 wire:model="total">{{$total}}</h5>
                             </div>
                             <h6><a href="{{route('shop.cart.checkout')}}" class="cus-btn mt-24">

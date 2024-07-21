@@ -4,10 +4,10 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.number
             name="number"
-            label="Number"
+            label="رقم الطلبية"
             :value="old('number', ($editing ? $order->number : ''))"
             max="255"
-            placeholder="Number"
+            placeholder="رقم الطلبية"
             required
         ></x-inputs.number>
     </x-inputs.group>
@@ -15,11 +15,11 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.number
             name="total"
-            label="Total"
+            label="قيمة الطلبية"
             :value="old('total', ($editing ? $order->total : ''))"
             max="255"
             step="0.01"
-            placeholder="Total"
+            placeholder="قيمة الطلبية"
             required
         ></x-inputs.number>
     </x-inputs.group>
@@ -33,9 +33,9 @@
     </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">
-        <x-inputs.select name="user_id" label="User" required>
+        <x-inputs.select name="user_id" label="الزبون" required>
             @php $selected = old('user_id', ($editing ? $order->user_id : '')) @endphp
-            <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the User</option>
+            <option disabled {{ empty($selected) ? 'selected' : '' }}>الرجاء اختيار الزبون</option>
             @foreach($users as $value => $label)
             <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
             @endforeach

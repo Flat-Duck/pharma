@@ -6,7 +6,9 @@
             <div class="card card-sm">
                 <div class="card-body">
                     <div class="row">
-                        <h1 class="d-flex justify-content-center">صيدلية طوبى</h1>
+                        <img src="/pharma_logo.png" style="display: block; width:140px; margin-top:-65px; margin-left: auto; margin-right: auto;" alt="logo">
+                        {{-- <h1 class="d-flex justify-content-center">صيدلية طوبى</h1> --}}
+                        
                         <h4 class="d-flex justify-content-center">فاتورة مبدئية</h4>
                     </div>
                     <div class="d-flex">
@@ -56,7 +58,7 @@
                                 <thead>
                                     <tr>
                                         <th>عدد المنتجات</th>
-                                        <th>المجموع الكلي</th>
+                                        <th>قيمة الفاتورة</th>
                                         <th>توقيع الزبون</th>
                                     </tr>
                                 </thead>
@@ -67,6 +69,16 @@
                                         <td></td>
                                     </tr>
                                 </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>معد الفاتورة</th>
+                                    </tr>
+                                    <tr>
+                                        <td >{{auth()->user()->name}}</td>
+                                        
+                                    </tr>
+                                </tfoot>
+
                             </table>
                         </div>
 

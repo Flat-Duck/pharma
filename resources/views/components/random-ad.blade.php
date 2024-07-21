@@ -21,7 +21,7 @@
             </div>
             <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
               <div class="images-row">
-                <img src="{{ asset($randomAd->image) }}" class="blog-img big" alt="">
+                <img src="{{ asset($randomAd->image) }}" style="max-height: 320px" class="blog-img big" alt="">
               </div>
             </div>
         </div>

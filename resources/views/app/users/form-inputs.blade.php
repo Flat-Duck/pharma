@@ -4,10 +4,10 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="name"
-            label="Name"
+            label="الاسم"
             :value="old('name', ($editing ? $user->name : ''))"
             maxlength="255"
-            placeholder="Name"
+            placeholder="الاسم"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -15,10 +15,10 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.email
             name="email"
-            label="Email"
+            label="البريد الالكتروني"
             :value="old('email', ($editing ? $user->email : ''))"
             maxlength="255"
-            placeholder="Email"
+            placeholder="البريد الالكتروني"
             required
         ></x-inputs.email>
     </x-inputs.group>
@@ -26,9 +26,9 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.password
             name="password"
-            label="Password"
+            label="كلمة المرور"
             maxlength="255"
-            placeholder="Password"
+            placeholder="كلمة المرور"
             :required="!$editing"
         ></x-inputs.password>
     </x-inputs.group>

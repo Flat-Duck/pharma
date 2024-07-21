@@ -4,10 +4,10 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="title"
-            label="Title"
+            label="العنوان"
             :value="old('title', ($editing ? $ad->title : ''))"
             maxlength="255"
-            placeholder="Title"
+            placeholder="العنوان"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -21,10 +21,10 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="offer"
-            label="Offer"
+            label="العرض"
             :value="old('offer', ($editing ? $ad->offer : ''))"
             maxlength="255"
-            placeholder="Offer"
+            placeholder="العرض"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -35,7 +35,7 @@
         >
             <x-inputs.partials.label
                 name="image"
-                label="Image"
+                label="صورة "
             ></x-inputs.partials.label
             ><br />
 
@@ -71,9 +71,9 @@
     </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">
-        <x-inputs.select name="product_id" label="Product" required>
+        <x-inputs.select name="product_id" label="المنتج" required>
             @php $selected = old('product_id', ($editing ? $ad->product_id : '')) @endphp
-            <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Product</option>
+            <option disabled {{ empty($selected) ? 'selected' : '' }}>الرجاء اختيار المنتج</option>
             @foreach($products as $value => $label)
             <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
             @endforeach

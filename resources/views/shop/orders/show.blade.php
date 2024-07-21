@@ -6,8 +6,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="text-block">
-                        <h1 class="mb-12 text-center">تابع حالة الطلبية</h1>
-                        <p class="dark-gray">Lorem ipsum dolor sit amet consectetur. Sed <br> elementum ac </p>
+                        <h1 class="mb-12 text-center">تتبع حالة الطلبية</h1>
                     </div>
                 </div>
             </div>

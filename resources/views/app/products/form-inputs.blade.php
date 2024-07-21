@@ -4,10 +4,10 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.text
             name="name"
-            label="Name"
+            label="الاسم"
             :value="old('name', ($editing ? $product->name : ''))"
             maxlength="255"
-            placeholder="Name"
+            placeholder="الاسم"
             required
         ></x-inputs.text>
     </x-inputs.group>
@@ -15,7 +15,7 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.textarea
             name="description"
-            label="Description"
+            label="الوصف"
             maxlength="255"
             required
             >{{ old('description', ($editing ? $product->description : ''))
@@ -26,10 +26,10 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.number
             name="quantity"
-            label="Quantity"
+            label="الكمية"
             :value="old('quantity', ($editing ? $product->quantity : ''))"
             max="255"
-            placeholder="Quantity"
+            placeholder="الكمية"
             required
         ></x-inputs.number>
     </x-inputs.group>
@@ -37,11 +37,11 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.number
             name="price"
-            label="Price"
+            label="السعر"
             :value="old('price', ($editing ? $product->price : ''))"
             max="255"
             step="0.01"
-            placeholder="Price"
+            placeholder="السعر"
             required
         ></x-inputs.number>
     </x-inputs.group>
@@ -52,7 +52,7 @@
         >
             <x-inputs.partials.label
                 name="image"
-                label="Image"
+                label="صورة المنتج"
             ></x-inputs.partials.label
             ><br />
 
@@ -88,9 +88,9 @@
     </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">
-        <x-inputs.select name="brand_id" label="Brand" required>
+        <x-inputs.select name="brand_id" label="العلامة التجارية" required>
             @php $selected = old('brand_id', ($editing ? $product->brand_id : '')) @endphp
-            <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Brand</option>
+            <option disabled {{ empty($selected) ? 'selected' : '' }}>الرجاء اختيار العلامة التجارية</option>
             @foreach($brands as $value => $label)
             <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
             @endforeach
@@ -98,9 +98,9 @@
     </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">
-        <x-inputs.select name="category_id" label="Category" required>
+        <x-inputs.select name="category_id" label="التصنيف" required>
             @php $selected = old('category_id', ($editing ? $product->category_id : '')) @endphp
-            <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Category</option>
+            <option disabled {{ empty($selected) ? 'selected' : '' }}>الرجاء اختيار التصنيف</option>
             @foreach($categories as $value => $label)
             <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
             @endforeach
