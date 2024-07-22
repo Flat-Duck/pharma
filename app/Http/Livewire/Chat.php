@@ -36,7 +36,7 @@ class Chat extends Component
     {
         
         $hasFile= false;
-        $temporaryFilePath ='';
+        $temporaryFilePath ='xxxxx';
         if (!is_null($this->rxfile)) {
 
             $customFileName = now()->format('dmyhis').'_rx.png';
