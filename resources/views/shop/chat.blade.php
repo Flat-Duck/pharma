@@ -1,5 +1,5 @@
 @extends('layouts.shop-chat', ['page' => 'ads'])
 @section('content')
-@livewire('chat')
+@livewire('chat',['is_admin' => false])
 @endsection
 

@@ -4,8 +4,10 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Chat as ChatModel;
+use Livewire\WithFileUploads;
 class Chat extends Component
 {
+    use WithFileUploads;
     public $conversations;
     public $chat = [];
 
@@ -14,22 +16,42 @@ class Chat extends Component
 
     public $userId = 0;
 
+    public $is_admin = false;
+
+    public $rxfile = null;
+
 
 
     public function mount()
     {
         $this->conversations = ChatModel::latest()->get()->unique('sender_id');
+        if(!$this->is_admin)
+        {
+            self::loadChat(auth()->id());
+        }
     }
     
     public function sendMessage()
     {
+        
+        $hasFile= false;
+        $temporaryFilePath ='';
+        if (!is_null($this->rxfile)) {
+            $customFileName = now()->format('dmy').'rxfile.png';
+            $temporaryFilePath = $this->rxfile->storeAs('photos', $customFileName, 'public');
+            $hasFile = true;
+        }
+
         $chat = new ChatModel();
         $chat->sender_id = auth()->user()->id;
-        $chat->reciever_id = $this->userId;
+        $chat->reciever_id = $this->is_admin? $this->userId : 1;
         $chat->message = $this->messageText;
+        $chat->file = $hasFile? $temporaryFilePath : '' ;
         $chat->save();
         $this->messageText = '';
         $this->loadChat($this->userId);
+        
+        
     }
     
     public function loadChat($id)

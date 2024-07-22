@@ -16,6 +16,11 @@
                     <p>
                         {{$message->message}}
                     </p>
+                    @if (strlen($message->file) > 5)
+                        <div class="mt-2">
+                        <img src=" /storage/{{$message->file}}" alt="" class="rounded img-fluid">
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>
