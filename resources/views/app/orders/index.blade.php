@@ -69,9 +69,9 @@
                     <th class="text-right">
                         @lang('crud.orders.inputs.total')
                     </th>
-                    <th class="text-left">
+                    {{-- <th class="text-left">
                         @lang('crud.orders.inputs.is_delivered')
-                    </th>
+                    </th> --}}
                     <th class="text-left">
                         @lang('crud.orders.inputs.user_id')
                     </th>
@@ -83,7 +83,7 @@
                 <tr>
                     <td>{{ $order->number ?? '-' }}</td>
                     <td>{{ $order->total ?? '-' }}</td>
-                    <td>{!! $order->is_delivered? '<span class="badge bg-green text-green-fg">تم التوصيل</span>' : '<span class="badge bg-yellow text-yellow-fg">قيد المعالجة</span>' !!}</td>
+                    {{-- <td>{!! $order->is_delivered? '<span class="badge bg-green text-green-fg">تم التوصيل</span>' : '<span class="badge bg-yellow text-yellow-fg">قيد المعالجة</span>' !!}</td> --}}
                     <td>{{ optional($order->user)->name ?? '-' }}</td>
                     <td class="text-center" style="width: 134px;">
                         <div
