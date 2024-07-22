@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use App\Models\Chat as ChatModel;
 use Livewire\WithFileUploads;
@@ -37,9 +38,16 @@ class Chat extends Component
         $hasFile= false;
         $temporaryFilePath ='';
         if (!is_null($this->rxfile)) {
-            $customFileName = now()->format('dmy').'rxfile.png';
-            $temporaryFilePath = $this->rxfile->storeAs('photos', $customFileName, 'public');
+
+            $customFileName = now()->format('dmyhis').'_rx.png';
+            $destinationPath =  Storage::putFileAs(
+                'rx_files',
+                $this->rxfile,
+                $customFileName
+            );
+            $temporaryFilePath = $destinationPath;
             $hasFile = true;
+            
         }
 
         $chat = new ChatModel();
