@@ -27,7 +27,7 @@
     <x-inputs.group class="col-sm-12">
         <x-inputs.checkbox
             name="is_delivered"
-            label="Is Delivered"
+            label="هل تم توصيل الطلبية"
             :checked="old('is_delivered', ($editing ? $order->is_delivered : 0))"
         ></x-inputs.checkbox>
     </x-inputs.group>
