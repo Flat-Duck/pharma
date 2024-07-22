@@ -16,6 +16,9 @@
                             <div class="col">
                                 {{now()->format('Y/d/m')}}
                             </div>
+                            <div class="col">
+                                رقم الفاتورة : {{$order->number}} #
+                            </div>
                         </div>
                     </div>
                     <div class="divide-y-2 mt-4">
