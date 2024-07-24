@@ -2,7 +2,7 @@
     <div class="container-fluid">
       <nav class="navbar upper d-lg-flex d-none">
         <a class="navbar-brand" href="index.html">
-          <img alt="" src="{{asset("assets/media/brand-logo.png")}}" />
+          <img alt="" style="height: 120px; max-height: 140px;" src="/pharma_logo.png" />
         </a>
         <div class="search-bar">
           {{-- <form method="get" action="https://uiparadox.co.uk/templates/book_store/index.html">

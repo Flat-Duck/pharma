@@ -1,4 +1,4 @@
-<div style="height: 600px;">
+<div style="height: 440px;">
     <div class="row">
         <h1 class="mb-12 text-center">عروضنا</h1>
     </div>
