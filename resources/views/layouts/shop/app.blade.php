@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" viewport-fit="cover">
-    <meta name="description" content="BookStore HTML5 Template" />
+    <meta name="description" content="Pharma Store" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Pharma store</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/media/favicon.png" />

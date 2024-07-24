@@ -21,6 +21,22 @@
                             </span>
                             @enderror
                         </div>
+                        <div class="mb-24">
+                            <input type="text" class="form-control  @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" id="address" required placeholder="{{ __('العنوان') }}">
+                            @error('address')
+                            <span class="invalid-feedback">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <div class="mb-24">
+                            <input type="text" class="form-control  @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" id="phone" required placeholder="{{ __('رقم الهاتف') }}">
+                            @error('phone')
+                            <span class="invalid-feedback">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
 
                         <div class="mb-24">
                             <input type="email" class="form-control  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" id="email" required placeholder="{{ __('البريد الالكتروني') }}">

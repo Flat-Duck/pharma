@@ -45,7 +45,7 @@ class Order extends Model
                 return "50%" ;
             case 'طلبك قيد التوصيل':
                 return "75%" ;
-            case 'تم توصيل طلبك اليك':
+            case 'تم التسليم':
                 return "100%" ;
             default:
                 return "0%" ;

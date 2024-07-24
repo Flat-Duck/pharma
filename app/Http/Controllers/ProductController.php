@@ -32,6 +32,19 @@ class ProductController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     */
+    public function stock(Request $request): View
+    {
+        $this->authorize('view-any', Product::class);
+        $products = Product::
+            paginate(1000)
+            ->withQueryString();
+
+        return view('app.products.print', compact('products'));
+    }
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create(Request $request): View

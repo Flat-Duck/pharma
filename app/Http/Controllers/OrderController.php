@@ -28,6 +28,22 @@ class OrderController extends Controller
 
         return view('app.orders.index', compact('orders', 'search'));
     }
+        /**
+     * Display a listing of the resource.
+     */
+    public function sales(Request $request): View
+    {
+        $this->authorize('view-any', Order::class);
+
+
+
+        $orders = Order::where('is_delivered',true)
+            ->latest()
+            ->paginate(500)
+            ->withQueryString();
+
+        return view('app.orders.sales', compact('orders'));
+    }
     public function followup(Request $request): View
     {
         $this->authorize('view-any', Order::class);
@@ -118,7 +134,7 @@ class OrderController extends Controller
     }
     public function update_order_status_three(Request $request, Order $order)
     {
-       $order->status = 'تم توصيل طلبك اليك';
+       $order->status = 'تم التسليم';
        $order->is_delivered = true;
        $order->save();
        $this->finalizeOrder($order);

@@ -24,6 +24,8 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
+            'phone' => $this->faker->phoneNumber(),
+            'address' => $this->faker->address(),
             'email' => $this->faker->unique->email(),
             'email_verified_at' => now(),
             'password' => \Hash::make('password'),

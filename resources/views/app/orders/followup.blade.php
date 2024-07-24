@@ -84,7 +84,7 @@
                             <div class="dropdown-menu" style="">
                                 <a href="{{route('update_order_status_one',$order)}}" type="submit" class="dropdown-item" >طلبك قيد الاعداد</a>
                                 <a href="{{route('update_order_status_two',$order)}}" type="submit" class="dropdown-item" >طلبك قيد التوصيل</a>
-                                <a href="{{route('update_order_status_three',$order)}}" type="submit" class="dropdown-item" >تم توصيل طلبك اليك</a>
+                                <a href="{{route('update_order_status_three',$order)}}" type="submit" class="dropdown-item" >تم التسليم</a>
                                     
                                 
                             </div>

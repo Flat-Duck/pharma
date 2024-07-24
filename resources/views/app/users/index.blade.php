@@ -55,6 +55,8 @@
                 <tr>
                     <th class="text-left">@lang('crud.users.inputs.name')</th>
                     <th class="text-left">@lang('crud.users.inputs.email')</th>
+                    <th class="text-left">@lang('crud.users.inputs.phone')</th>
+                    <th class="text-left">@lang('crud.users.inputs.address')</th>
                     <th class="text-center">@lang('crud.common.actions')</th>
                 </tr>
             </thead>
@@ -63,6 +65,8 @@
                 <tr>
                     <td>{{ $user->name ?? '-' }}</td>
                     <td>{{ $user->email ?? '-' }}</td>
+                    <td>{{ $user->phone ?? '-' }}</td>
+                    <td>{{ $user->address ?? '-' }}</td>
                     <td class="text-center" style="width: 134px;">
                         <div
                             role="group"

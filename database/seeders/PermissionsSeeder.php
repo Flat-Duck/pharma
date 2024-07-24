@@ -15,46 +15,53 @@ class PermissionsSeeder extends Seeder
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
         // Create default permissions
-        Permission::create(['name' => 'list ads']);
         Permission::create(['name' => 'view ads']);
-        Permission::create(['name' => 'create ads']);
-        Permission::create(['name' => 'update ads']);
-        Permission::create(['name' => 'delete ads']);
+        Permission::create(['name' => 'view brands']);
+        Permission::create(['name' => 'view products']);
+        Permission::create(['name' => 'view orders']);
+        Permission::create(['name' => 'view categories']);
+        Permission::create(['name' => 'view carts']);
 
         Permission::create(['name' => 'list brands']);
-        Permission::create(['name' => 'view brands']);
-        Permission::create(['name' => 'create brands']);
-        Permission::create(['name' => 'update brands']);
-        Permission::create(['name' => 'delete brands']);
-
+        Permission::create(['name' => 'list ads']);
         Permission::create(['name' => 'list carts']);
-        Permission::create(['name' => 'view carts']);
-        Permission::create(['name' => 'create carts']);
-        Permission::create(['name' => 'update carts']);
-        Permission::create(['name' => 'delete carts']);
-
         Permission::create(['name' => 'list categories']);
-        Permission::create(['name' => 'view categories']);
-        Permission::create(['name' => 'create categories']);
-        Permission::create(['name' => 'update categories']);
-        Permission::create(['name' => 'delete categories']);
-
         Permission::create(['name' => 'list orders']);
-        Permission::create(['name' => 'view orders']);
-        Permission::create(['name' => 'create orders']);
-        Permission::create(['name' => 'update orders']);
-        Permission::create(['name' => 'delete orders']);
-
         Permission::create(['name' => 'list products']);
-        Permission::create(['name' => 'view products']);
-        Permission::create(['name' => 'create products']);
-        Permission::create(['name' => 'update products']);
-        Permission::create(['name' => 'delete products']);
-
         // Create user role and assign existing permissions
         $currentPermissions = Permission::all();
         $userRole = Role::firstOrCreate(['name' => 'user']);
         $userRole->givePermissionTo($currentPermissions);
+
+        Permission::create(['name' => 'create ads']);
+        Permission::create(['name' => 'update ads']);
+        Permission::create(['name' => 'delete ads']);
+        
+        Permission::create(['name' => 'create brands']);
+        Permission::create(['name' => 'update brands']);
+        Permission::create(['name' => 'delete brands']);
+
+        
+        Permission::create(['name' => 'create carts']);
+        Permission::create(['name' => 'update carts']);
+        Permission::create(['name' => 'delete carts']);
+
+        
+        Permission::create(['name' => 'create categories']);
+        Permission::create(['name' => 'update categories']);
+        Permission::create(['name' => 'delete categories']);
+
+        
+        Permission::create(['name' => 'create orders']);
+        Permission::create(['name' => 'update orders']);
+        Permission::create(['name' => 'delete orders']);
+
+        
+        Permission::create(['name' => 'create products']);
+        Permission::create(['name' => 'update products']);
+        Permission::create(['name' => 'delete products']);
+
+
 
         // Create admin exclusive permissions
         Permission::create(['name' => 'list roles']);
@@ -84,6 +91,7 @@ class PermissionsSeeder extends Seeder
 
         if ($user) {
             $user->assignRole($adminRole);
+            $user->assignRole($userRole);
         }
     }
 }

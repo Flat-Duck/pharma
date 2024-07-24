@@ -58,6 +58,8 @@ Route::prefix('/admin')
     Route::get('orders/update_order_status_one/{order}', [OrderController::class,'update_order_status_one'])->name('update_order_status_one');
     Route::get('orders/update_order_status_two/{order}', [OrderController::class,'update_order_status_two'])->name('update_order_status_two');
     Route::get('orders/update_order_status_three/{order}', [OrderController::class,'update_order_status_three'])->name('update_order_status_three');
+    Route::get('orders/reports/sales', [OrderController::class,'sales'])->name('sales');
+    Route::get('products/reports/stock', [ProductController::class,'stock'])->name('stock');
     Route::resource('orders', OrderController::class);
     Route::resource('products', ProductController::class);
     Route::resource('users', UserController::class);

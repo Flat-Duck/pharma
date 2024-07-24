@@ -36,6 +36,7 @@
                         </div>
                     </section>
                     <h3 class="text-center">محتويات الطلبية</h3>
+                    <h5 class="text-center">رقم الطلبية: {{$order->number}}</h5>
                     <hr>
                     <section class="shop-list-grid">
                         <div class="container">

@@ -4,16 +4,12 @@
             <div class="sidebar mb-48">
                 <div class="sidebar-block">
                     <div class="filters">
-                        <form action="https://uiparadox.co.uk/templates/book_store/shop-listing.html">
                             <div class="filter-block">
-                                <h4 class="mb-24">فلترة</h4>
-                                <form method="get"
-                                    action="https://uiparadox.co.uk/templates/book_store/shop-listing.html">
-                                    <div class="form-group has-search">
-                                        <input type="text" class="form-control" placeholder="إبحث عن بعض المنتجات...." wire:model="searQuery" wire:keyup.debounce="filter">
-                                        <button type="submit" class="b-unstyle"><i class="fal fa-search"></i></button>
-                                    </div>
-                                </form>
+                                <h4 class="mb-24">بحث</h4>
+                                <div class="form-group has-search">
+                                    <input type="text" class="form-control" placeholder="إبحث عن بعض المنتجات...." wire:model="searQuery" wire:keyup.debounce="filter">
+                                    <button type="submit" class="b-unstyle"><i class="fal fa-search"></i></button>
+                                </div>
                             </div>
                             <hr>
                             <div class="filter-block">
@@ -52,7 +48,6 @@
                                 </ul>
                             </div>
                             <hr>
-                        </form>
                     </div>
                 </div>
             </div>
