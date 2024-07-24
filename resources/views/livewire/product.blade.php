@@ -4,7 +4,9 @@
         <div class="">
             <ul class="unstyled hover-buttons">
                 <li><a href="{{route('shop.products.show', $product)}}"><i class="fal fa-eye"></i></a></li>
+                @auth
                 <li><span wire:click.debounce="addToCart"><i class="fal fa-shopping-cart"></i></span></li>
+                @endauth
             </ul>
         </div>
         <div class="book-content">
