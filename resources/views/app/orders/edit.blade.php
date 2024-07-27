@@ -42,7 +42,7 @@
 @can('view-any', App\Models\order_product::class)
 <div class="card mt-4">
     <div class="card-header">
-        <h3 class="card-title">منجات الطلبية</h3>
+        <h3 class="card-title">منتجات الطلبية</h3>
     </div>
     <div class="card-body">
         <livewire:order-products-detail :order="$order" />
