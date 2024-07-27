@@ -103,6 +103,21 @@ return [
             'user_id' => 'الزبون',
         ],
     ],
+    'order_products' => [
+        'name' => 'منتجات الطلبية',
+        'index_title' => ' القائمة',
+        'new_title' => 'اضافة منتج  جديد',
+        'create_title' => 'جديد',
+        'edit_title' => 'تعديل',
+        'show_title' => 'عرض',
+        'inputs' => [
+            'product_id' => 'المنتج',
+            'quantity' => 'الكمية',
+            'price' => 'السعر',
+            'total' => 'المجموع',
+        ],
+    ],
+
 
     'products' => [
         'name' => 'المنتجات',
