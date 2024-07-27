@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <div class="images-row">
-                        <img src="{{ asset($randomAd->image) }}" style="max-height: 280px;width: 400px;"
+                        <img src="{{ Storage::url($randomAd->image) }}" style="max-height: 280px;width: 400px;"
                             class="blog-img big" alt="">
                     </div>
                 </div>
