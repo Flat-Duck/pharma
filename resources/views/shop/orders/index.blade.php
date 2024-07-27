@@ -21,7 +21,7 @@
                         <div class="row">
                             <div class="col-xl-1"></div>
                             <div class="col-xl-10">
-                                @isset($order)                                
+                                @isset($order)
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3">
                                     </div>
