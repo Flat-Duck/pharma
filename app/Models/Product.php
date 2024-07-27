@@ -19,6 +19,7 @@ class Product extends Model
         'image',
         'brand_id',
         'category_id',
+        'is_private',
     ];
 
     protected $searchableFields = ['*'];

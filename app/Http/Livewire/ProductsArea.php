@@ -15,7 +15,7 @@ class ProductsArea extends Component
     protected $listeners = ['reloadProducts'];
 
     public function mount() {
-        $this->products = ProductModel::latest()->paginate(9)->withQueryString();
+        $this->products = ProductModel::latest()->where('is_private', false)->paginate(9)->withQueryString();
     }
 
     public function render()

@@ -50,6 +50,25 @@
                                 </tbody>
                             </table>
                         </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <div class="table-responsive">
+                            <table class="table" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>عدد الفواتير</th>
+                                        <th>المجموع</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{ $orders->count()}}</td>
+                                        <td>{{ $orders->sum('total')}} د.ل</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

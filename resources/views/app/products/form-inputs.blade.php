@@ -47,6 +47,15 @@
     </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">
+        <x-inputs.checkbox
+            name="is_private"
+            label="منتج يباع بالوصفة"
+            :checked="old('is_private', ($editing ? $order->is_private : 0))"
+        ></x-inputs.checkbox>
+    </x-inputs.group>
+
+
+    <x-inputs.group class="col-sm-12">
         <div
             x-data="imageViewer('{{ $editing && $product->image ? \Storage::url($product->image) : '' }}')"
         >

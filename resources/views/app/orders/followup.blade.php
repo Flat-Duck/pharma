@@ -61,9 +61,6 @@
                         @lang('crud.orders.inputs.total')
                     </th>
                     <th class="text-left">
-                        @lang('crud.orders.inputs.is_delivered')
-                    </th>
-                    <th class="text-left">
                         @lang('crud.orders.inputs.user_id')
                     </th>
                     <th class="text-center">@lang('crud.orders.inputs.status')</th>
@@ -76,7 +73,6 @@
                 <tr>
                     <td>{{ $order->number ?? '-' }}</td>
                     <td>{{ $order->total ?? '-' }}</td>
-                    <td>{{ $order->is_delivered ?? '-' }}</td>
                     <td>{{ optional($order->user)->name ?? '-' }}</td>
                     <td>
                         <span class="dropdown">

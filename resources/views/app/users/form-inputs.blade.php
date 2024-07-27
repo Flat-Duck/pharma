@@ -11,6 +11,28 @@
             required
         ></x-inputs.text>
     </x-inputs.group>
+    
+    <x-inputs.group class="col-sm-12">
+        <x-inputs.text
+            name="phone"
+            label="رقم الهاتف"
+            :value="old('phone', ($editing ? $user->phone : ''))"
+            maxlength="255"
+            placeholder="رقم الهاتف"
+            required
+        ></x-inputs.text>
+    </x-inputs.group>
+    
+    <x-inputs.group class="col-sm-12">
+        <x-inputs.text
+            name="address"
+            label="العنوان"
+            :value="old('address', ($editing ? $user->address : ''))"
+            maxlength="255"
+            placeholder="العنوان"
+            required
+        ></x-inputs.text>
+    </x-inputs.group>
 
     <x-inputs.group class="col-sm-12">
         <x-inputs.email

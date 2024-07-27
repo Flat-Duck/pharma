@@ -10,7 +10,7 @@
             </ul>
         </div>
         <div class="book-content">
-            <h5 class="mt-24"><a href="product-detail.html">{{$product->name}} </a></h5>
+            <h5 class="mt-24"><a href="{{route('shop.products.show',$product)}}" >{{$product->name}} </a></h5>
             {{-- <div class="rating-stars">
                 <a href="#"><img src="assets/media/icons/fill-star.png" alt=""></a>
                 <a href="#"><img src="assets/media/icons/fill-star.png" alt=""></a>
