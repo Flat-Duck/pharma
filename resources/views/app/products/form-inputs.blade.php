@@ -50,7 +50,7 @@
         <x-inputs.checkbox
             name="is_private"
             label="منتج يباع بالوصفة"
-            :checked="old('is_private', ($editing ? $order->is_private : 0))"
+            :checked="old('is_private', ($editing ? $product->is_private : 0))"
         ></x-inputs.checkbox>
     </x-inputs.group>
 
