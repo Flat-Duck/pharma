@@ -26,6 +26,7 @@ class ProductStoreRequest extends FormRequest
             'price' => ['required', 'numeric'],
             'image' => ['nullable', 'file', 'max:5024'],
             'brand_id' => ['required', 'exists:brands,id'],
+            'is_private' => ['boolean'],
             'category_id' => ['required', 'exists:categories,id'],
         ];
     }
