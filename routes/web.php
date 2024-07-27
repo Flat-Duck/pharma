@@ -36,7 +36,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/admin', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/stats', [HomeController::class, 'stats'])->name('stats');
 
@@ -44,6 +43,7 @@ Route::prefix('/admin')
 ->middleware('auth')
 ->middleware(['role:super-admin'])
 ->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
     
     Route::get('/chat', [HomeController::class, 'chat'])->name('chats');
 
