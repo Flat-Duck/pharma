@@ -19,7 +19,6 @@ class ProductController extends Controller
      */
     public function index(Request $request): View
     {
-        $this->authorize('view-any', Product::class);
 
         $search = $request->get('search', '');
 
@@ -36,7 +35,6 @@ class ProductController extends Controller
      */
     public function create(Request $request): View
     {
-        $this->authorize('create', Product::class);
 
         $brands = Brand::pluck('name', 'id');
         $categories = Category::pluck('name', 'id');
@@ -49,7 +47,6 @@ class ProductController extends Controller
      */
     public function store(ProductStoreRequest $request): RedirectResponse
     {
-        $this->authorize('create', Product::class);
 
         $validated = $request->validated();
 
@@ -71,7 +68,6 @@ class ProductController extends Controller
      */
     public function show(Request $request, Product $product): View
     {
-        $this->authorize('view', $product);
 
         return view('shop.products.show', compact('product'));
     }
@@ -81,7 +77,6 @@ class ProductController extends Controller
      */
     public function edit(Request $request, Product $product): View
     {
-        $this->authorize('update', $product);
 
         $brands = Brand::pluck('name', 'id');
         $categories = Category::pluck('name', 'id');
@@ -99,7 +94,6 @@ class ProductController extends Controller
         ProductUpdateRequest $request,
         Product $product
     ): RedirectResponse {
-        $this->authorize('update', $product);
 
         $validated = $request->validated();
         if ($request->hasFile('image')) {
@@ -128,7 +122,6 @@ class ProductController extends Controller
         Request $request,
         Product $product
     ): RedirectResponse {
-        $this->authorize('delete', $product);
 
         if ($product->image) {
             Storage::delete($product->image);

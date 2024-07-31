@@ -32,7 +32,7 @@ class OrderController extends Controller
      */
     public function show(Request $request, Order $order): View
     {
-        $this->authorize('view', $order);
+        
 
         return view('shop.orders.show', compact('order'));
     }
@@ -42,7 +42,7 @@ class OrderController extends Controller
      */
     public function edit(Request $request, Order $order): View
     {
-        $this->authorize('update', $order);
+        
 
         $users = User::pluck('name', 'id');
 
@@ -56,7 +56,7 @@ class OrderController extends Controller
         OrderUpdateRequest $request,
         Order $order
     ): RedirectResponse {
-        $this->authorize('update', $order);
+        
 
         $validated = $request->validated();
 
@@ -72,7 +72,7 @@ class OrderController extends Controller
      */
     public function destroy(Request $request, Order $order): RedirectResponse
     {
-        $this->authorize('delete', $order);
+        
 
         $order->delete();
 
