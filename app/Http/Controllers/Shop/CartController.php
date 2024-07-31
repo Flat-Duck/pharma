@@ -19,7 +19,7 @@ class CartController extends Controller
      */
     public function index(Request $request): View
     {
-        $this->authorize('view-any', Cart::class);
+        // $this->authorize('view-any', Cart::class);
         return view('shop.cart');
     }
 
@@ -28,7 +28,7 @@ class CartController extends Controller
      */
     public function create(Request $request): View
     {
-        $this->authorize('create', Cart::class);
+        // $this->authorize('create', Cart::class);
 
         $users = User::pluck('name', 'id');
 
@@ -40,7 +40,7 @@ class CartController extends Controller
      */
     public function store(CartStoreRequest $request): RedirectResponse
     {
-        $this->authorize('create', Cart::class);
+        // $this->authorize('create', Cart::class);
 
         $validated = $request->validated();
 
@@ -56,7 +56,7 @@ class CartController extends Controller
      */
     public function show(Request $request, Cart $cart): View
     {
-        $this->authorize('view', $cart);
+        // $this->authorize('view', $cart);
 
         return view('app.carts.show', compact('cart'));
     }
@@ -66,7 +66,7 @@ class CartController extends Controller
      */
     public function edit(Request $request, Cart $cart): View
     {
-        $this->authorize('update', $cart);
+        // $this->authorize('update', $cart);
 
         $users = User::pluck('name', 'id');
 
@@ -80,7 +80,7 @@ class CartController extends Controller
         CartUpdateRequest $request,
         Cart $cart
     ): RedirectResponse {
-        $this->authorize('update', $cart);
+        // $this->authorize('update', $cart);
 
         $validated = $request->validated();
 
