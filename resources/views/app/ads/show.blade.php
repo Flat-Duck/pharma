@@ -51,7 +51,7 @@
                                 >@lang('crud.ads.inputs.image')</label
                             >
                             <x-partials.thumbnail
-                                src="{{ $ad->image ? \Storage::url($ad->image) : '' }}"
+                                src="{{ $ad->image ? asset($ad->image) : '' }}"
                                 size="150"
                             />
                         </div>
