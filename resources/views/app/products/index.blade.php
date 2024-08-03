@@ -86,7 +86,7 @@
                     <td>{{ $product->price ?? '-' }}</td>
                     <td>
                         <x-partials.thumbnail
-                            src="{{ $product->image ? \Storage::url($product->image) : '' }}"
+                            src="{{ $product->image ? asset($product->image) : '' }}"
                         />
                     </td>
                     <td>{{ optional($product->brand)->name ?? '-' }}</td>

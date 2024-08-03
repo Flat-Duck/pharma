@@ -71,7 +71,7 @@
                     <td>{{ $ad->offer ?? '-' }}</td>
                     <td>
                         <x-partials.thumbnail
-                            src="{{ $ad->image ? \Storage::url($ad->image) : '' }}"
+                            src="{{ $ad->image ?  asset($ad->image) : '' }}"
                         />                        
                     </td>
                     <td>{{ optional($ad->product)->name ?? '-' }}</td>
