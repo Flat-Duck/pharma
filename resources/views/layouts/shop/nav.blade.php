@@ -14,7 +14,7 @@
         </div>
         <div class="right-content">
           @auth
-            <a href="#"><img src="{{asset("assets/media/icons/wish-list.png")}}" alt="" /></a>
+            {{-- <a href="#"><img src="{{asset("assets/media/icons/wish-list.png")}}" alt="" /></a> --}}
             <a href="{{ route('shop.cart.show') }}"><img src="{{asset("assets/media/icons/shopping-cart.png")}}" alt="" /></a>
             <ul class="unstyled">
               <li>
