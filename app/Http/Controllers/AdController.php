@@ -100,7 +100,11 @@ class AdController extends Controller
                 Storage::delete($ad->image);
             }
 
-            $validated['image'] = $request->file('image')->store('ads');
+            $file = $request->file('image');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $destinationPath = public_path('/uploads/ads');
+            $file->move($destinationPath, $filename);
+            $validated['image'] = 'uploads/ads/' . $filename;
         }
 
         $ad->update($validated);
